@@ -1727,7 +1727,7 @@
     "@docusaurus/theme-search-algolia" "3.8.1"
     "@docusaurus/types" "3.8.1"
 
-"@docusaurus/theme-classic@3.8.1":
+"@docusaurus/theme-classic@3.8.1", "@docusaurus/theme-classic@^3.8.1":
   version "3.8.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/theme-classic/-/theme-classic-3.8.1.tgz#1e45c66d89ded359225fcd29bf3258d9205765c1"
   integrity sha512-bqDUCNqXeYypMCsE1VcTXSI1QuO4KXfx8Cvl6rYfY0bhhqN6d2WZlRkyLg/p6pm+DzvanqHOyYlqdPyP0iz+iw==
@@ -1977,7 +1977,7 @@
     unist-util-visit "^5.0.0"
     vfile "^6.0.0"
 
-"@mdx-js/react@^3.0.0":
+"@mdx-js/react@^3.0.0", "@mdx-js/react@^3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-3.1.0.tgz#c4522e335b3897b9a845db1dbdd2f966ae8fb0ed"
   integrity sha512-QjHtSaoameoalGnKDT3FoIl4+9RwyTmo9ZJGBdLOks/YOiWHoRDI3PUwEzOE7kEmGcV3AFcp9K6dYu9rEuKLAQ==
@@ -2451,7 +2451,7 @@
     "@types/history" "^4.7.11"
     "@types/react" "*"
 
-"@types/react@*":
+"@types/react@*", "@types/react@^19.1.6":
   version "19.1.6"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-19.1.6.tgz#dee39f3e1e9a7d693f156a5840570b6d57f325ea"
   integrity sha512-JeG0rEWak0N6Itr6QUx+X60uQmN+5t3j9r/OVDtWzFXKaj6kD1BwJzOksD0FF6iWxZlbE1kB0q9vtnU2ekqa1Q==
