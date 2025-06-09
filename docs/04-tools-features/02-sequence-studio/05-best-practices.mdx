@@ -1,0 +1,54 @@
+---
+title: Best Practices
+description: Tips and strategies for designing, testing, and maintaining flows in Sequence Studio.
+---
+
+import { Steps, Step } from '@site/src/components/Steps';
+
+
+# Best Practices for Sequence Studio
+
+Follow these best practices to build robust, maintainable, and effective conversational flows in Sequence Studio.
+
+## Flow Design
+- **Start simple:** Get a basic loop working before adding complexity.
+- **Modularize:** Break large flows into smaller, reusable sub-flows where possible.
+- **Visual clarity:** Lay out nodes logically and use comments/labels to keep flows organized.
+
+## Naming Conventions
+- **Nodes:** Use descriptive names for each node (e.g., `Ask Name`, `Check Age`).
+- **Variables:** Use clear, consistent variable names (e.g., `user_name`, `order_status`).
+- **Intents:** Name intents based on user goals (e.g., `OrderPizza`, `GetSupport`).
+
+## Variable Management
+- **Define up front:** List all variables you'll need before building complex logic.
+- **Clean up:** Remove unused variables regularly.
+- **Scope:** Use variables for data you need to reference across multiple nodes.
+
+## Testing & Debugging
+- **Preview often:** Use the built-in preview to test each branch and scenario.
+- **DIRTbox:** Simulate real conversations and edge cases.
+- **Logs & transcripts:** Review logs to spot issues and improve flows.
+- **Automated tests:** Create test cases for critical paths (if available).
+
+<Steps>
+  <Step title="Preview your flow">Use the built-in preview to check each branch and scenario before moving on.</Step>
+  <Step title="Test in DIRTbox">Simulate real conversations and edge cases in the DIRTbox to catch unexpected issues.</Step>
+  <Step title="Review logs">Check transcripts and logs to spot issues and improve your flows based on real data.</Step>
+</Steps>
+
+## Collaboration
+- **Revision history:** Use the Revisions tab to track changes and roll back if needed.
+- **Notes:** Add comments or revision notes for team context.
+- **Consistent style:** Agree on naming and design conventions with your team.
+
+## Scaling Flows
+- **Reuse patterns:** Copy/paste or template common logic (e.g., error handling, data collection).
+- **Branching:** Use Condition and Intent nodes for smart, scalable branching.
+- **Performance:** Keep flows efficient—avoid unnecessary loops or redundant nodes.
+
+## Further Reading
+- [Build Flows Guide](../../common-tasks/conversation-design/build-flows)
+- [Understand Nodes](../../common-tasks/conversation-design/understand-nodes)
+- [Conditions & Logic](../../common-tasks/conversation-design/conditions-logic)
+- [Preview & Test](../../common-tasks/testing-and-improvement/test-in-dirtbox) 

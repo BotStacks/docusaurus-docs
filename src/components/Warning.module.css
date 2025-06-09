@@ -1,0 +1,23 @@
+.warning {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    padding: 1em 1.2em;
+    margin: 1.1em 0;
+    background: #fff7ed;
+    border-left: 5px solid #f59e42;
+    border-radius: 8px;
+    color: #7c4700;
+    font-weight: 500;
+    box-shadow: 0 1px 8px rgba(251, 146, 60, 0.07);
+  }
+  
+  .icon {
+    font-size: 1.4em;
+    color: #f59e42;
+  }
+  
+  .text {
+    font-size: 1.06em;
+  }
+  

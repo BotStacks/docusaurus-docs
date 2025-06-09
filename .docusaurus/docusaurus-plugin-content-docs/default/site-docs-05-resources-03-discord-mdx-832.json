@@ -1,0 +1,30 @@
+{
+  "id": "resources/discord",
+  "title": "Discord",
+  "description": "Join the BotStacks Discord community for support, feature requests, bug fixes, and collaboration with other builders.",
+  "source": "@site/docs/05-resources/03-discord.mdx",
+  "sourceDirName": "05-resources",
+  "slug": "/resources/discord",
+  "permalink": "/resources/discord",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Discord",
+    "description": "Join the BotStacks Discord community for support, feature requests, bug fixes, and collaboration with other builders.",
+    "icon": "circle-info",
+    "iconType": "solid",
+    "og:title": "Discord Community | BotStacks"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Changelogs",
+    "permalink": "/resources/changelog"
+  },
+  "next": {
+    "title": "Contact Support",
+    "permalink": "/resources/contact-support"
+  }
+}

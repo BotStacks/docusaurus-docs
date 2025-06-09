@@ -1,0 +1,23 @@
+{
+  "id": "index",
+  "title": "Welcome to BotStacks Documentation",
+  "description": "BotStacks is a powerful platform for building, deploying, and managing advanced AI assistants and automations. Whether you're a developer, designer, or product owner, this documentation will help you get the most out of BotStacks.",
+  "source": "@site/docs/01-index.mdx",
+  "sourceDirName": ".",
+  "slug": "/",
+  "permalink": "/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Welcome to BotStacks Documentation",
+    "slug": "/"
+  },
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "Getting Started",
+    "permalink": "/category/getting-started"
+  }
+}

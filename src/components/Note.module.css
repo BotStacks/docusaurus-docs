@@ -1,0 +1,46 @@
+.note {
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+    border-left: 5px solid var(--ifm-color-primary);
+    background: var(--ifm-background-color);
+    box-shadow: 0 2px 12px rgba(60, 60, 100, 0.06);
+  }
+  
+  .header {
+    font-size: 1.1em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    margin-bottom: 0.25em;
+  }
+  
+  .title {
+    font-size: 1em;
+  }
+  
+  .body {
+    color: var(--ifm-font-color-base);
+  }
+  
+  /* Color variations */
+  .info {
+    border-left-color: var(--ifm-color-info-light, #2980b9);
+  }
+  
+  .warning {
+    border-left-color: var(--ifm-color-warning-light, #f39c12);
+    background: rgba(243, 156, 18, 0.08);
+  }
+  
+  .success {
+    border-left-color: var(--ifm-color-success-light, #2ecc40);
+    background: rgba(46, 204, 64, 0.08);
+  }
+  
+  .danger {
+    border-left-color: var(--ifm-color-danger-light, #e74c3c);
+    background: rgba(231, 76, 60, 0.08);
+  }
+  

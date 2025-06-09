@@ -1,0 +1,57 @@
+---
+title: Panels
+description: "Reference for panels: Variables, Brain Vault, Revisions, and Intents in Sequence Studio."
+---
+
+import Card from '@site/src/components/Card';
+import CardGroup from '@site/src/components/CardGroup';
+
+# Panels in Sequence Studio
+
+Sequence Studio includes several panels that provide access to key configuration and management features. Each panel is essential for building robust, flexible, and maintainable conversational assistants.
+
+## Variables Panel
+- **Purpose:** Define, view, and manage variables used throughout your flows.
+- **Usage:**
+  - Store user input, state, and other data for use in logic and responses.
+  - Add, edit, or remove variables as your flow evolves.
+  - Reference variables in node prompts, conditions, and API calls.
+- **Tips:**
+  - Use clear, descriptive names for variables.
+  - Regularly review and clean up unused variables.
+- **Related:** See [Conditions & Logic](../../common-tasks/conversation-design/conditions-logic) for advanced variable usage.
+
+## Brain Vault Panel
+- **Purpose:** Manage your assistant's knowledge sources.
+- **Usage:**
+  - Add, organize, and preview documents, URLs, and text that the AI can reference for accurate answers.
+  - Test retrieval and tune knowledge settings.
+- **Tips:**
+  - Keep sources focused and well-titled for best retrieval.
+  - Use the preview feature to test knowledge before deploying.
+- **Related:** See [Brain Vault Reference](../brain-vault) for full details.
+
+## Revisions Panel
+- **Purpose:** Improve your assistant's accuracy by providing sample questions, incorrect responses, explanations of why the answer was wrong, and (optionally) a correct response. This helps the model learn and refine its answers over time.
+- **Usage:**
+  - Enter a sample user question.
+  - Record the assistant's incorrect response.
+  - Explain why the response was wrong.
+  - (Optional) Provide the correct response for reference.
+  - Use the preview button to test how the assistant would answer now.
+- **Tips:**
+  - Use real-world examples from transcripts or user feedback.
+  - Regularly update with new edge cases or misunderstood questions.
+- **Related:** See [Preview & Test](../../common-tasks/knowledge-management/preview-responses) for more on testing and improving answers.
+
+## Intents Panel
+- **Purpose:** Define and manage user intents and example utterances for use with the Intent Classify node.
+- **Usage:**
+  - Organize how your assistant recognizes and routes open-ended user input.
+  - Add, edit, or remove intents and provide example phrases for each.
+- **Tips:**
+  - Provide diverse, realistic examples for each intent to improve classification.
+  - Regularly review and refine intents as your assistant grows.
+- **Related:**
+  - See [Understand Nodes](../../common-tasks/conversation-design/understand-nodes) for an introduction to intents.
+  - See [Conditions & Logic](../../common-tasks/conversation-design/conditions-logic) for more on using intents and conditions in flows.

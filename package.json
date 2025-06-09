@@ -1,0 +1,22 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "serve": "docusaurus serve"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.8.1",
+    "@docusaurus/module-type-aliases": "^3.8.1",
+    "@docusaurus/preset-classic": "^3.8.1",
+    "docusaurus-lunr-search": "^3.6.0",
+    "docusaurus-plugin-image-zoom": "^3.0.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "typescript": "^5.8.3"
+  }
+}

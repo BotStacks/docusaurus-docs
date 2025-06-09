@@ -1,0 +1,46 @@
+.codeGroup {
+    border-radius: 8px;
+    border: 1px solid var(--ifm-color-emphasis-200, #eee);
+    margin: 1.2em 0;
+    background: var(--ifm-background-surface-color, #fff);
+    box-shadow: 0 2px 12px rgba(60, 60, 100, 0.06);
+  }
+  
+  .tabBar {
+    display: flex;
+    border-bottom: 1px solid var(--ifm-color-emphasis-200, #eee);
+    background: var(--ifm-background-color, #fafbfc);
+    padding: 0.4em 1em 0 1em;
+    gap: 0.2em;
+  }
+  
+  .tab {
+    background: none;
+    border: none;
+    padding: 0.5em 1em;
+    margin-bottom: -1px;
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--ifm-font-color-base);
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    transition: background 0.15s, color 0.15s, border 0.15s;
+  }
+  
+  .tab.active {
+    background: var(--ifm-background-surface-color, #fff);
+    color: var(--ifm-color-primary, #0250b6);
+    border-bottom: 2px solid var(--ifm-color-primary, #0250b6);
+    font-weight: 600;
+  }
+  
+  .tab:hover {
+    background: var(--ifm-color-emphasis-100, #f3f4f7);
+  }
+  
+  .tabContent {
+    padding: 1em;
+  }
+  

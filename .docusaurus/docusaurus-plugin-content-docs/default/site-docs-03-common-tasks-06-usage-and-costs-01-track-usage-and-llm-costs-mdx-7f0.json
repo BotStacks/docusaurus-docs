@@ -1,0 +1,28 @@
+{
+  "id": "common-tasks/usage-and-costs/track-costs",
+  "title": "Track Usage and LLM Costs",
+  "description": "Understanding and monitoring your AI token usage, assistant limits, and subscription details is essential for managing your costs and getting the most out of BotStacks.",
+  "source": "@site/docs/03-common-tasks/06-usage-and-costs/01-track-usage-and-llm-costs.mdx",
+  "sourceDirName": "03-common-tasks/06-usage-and-costs",
+  "slug": "/common-tasks/usage-and-costs/track-costs",
+  "permalink": "/common-tasks/usage-and-costs/track-costs",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "id": "track-costs",
+    "title": "Track Usage and LLM Costs",
+    "sidebar_label": "Track Usage & LLM Costs"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Embed the Chatbot on a Website",
+    "permalink": "/common-tasks/deployment/embed-chatbot"
+  },
+  "next": {
+    "title": "Logs & Analytics",
+    "permalink": "/common-tasks/log-analytics/logs-analytics"
+  }
+}

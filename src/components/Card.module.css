@@ -1,0 +1,58 @@
+.card {
+    background: var(--ifm-background-surface-color);
+    border: 1px solid var(--ifm-color-emphasis-200);
+    border-radius: 14px;
+    padding: 1.5rem;
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-decoration: none;
+    height: 100%;
+}
+
+.linkWrapper {
+    text-decoration: none;
+    display: flex;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+    border-color: var(--ifm-color-primary);
+}
+
+/* Slots ------------------------------------------------------------------ */
+.icon {
+    font-size: 1.75rem;
+    /* 28 px */
+    color: var(--ifm-color-primary);
+}
+
+.title {
+    margin: 0;
+    font-size: 1.125rem;
+    /* 18 px */
+    font-weight: 600;
+    color: var(--ifm-font-color-base);
+}
+
+.description {
+    margin: 0;
+    color: var(--ifm-font-color-secondary);
+}
+
+/* Dark mode -------------------------------------------------------------- */
+html[data-theme='dark'] .card {
+    background: var(--ifm-background-surface-color);
+    border-color: var(--ifm-color-emphasis-300);
+}
+
+html[data-theme='dark'] .card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.24);
+}
+
+.inlineContent {
+  display: inline;
+}

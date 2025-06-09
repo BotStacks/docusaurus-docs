@@ -1,0 +1,29 @@
+{
+  "id": "getting-started/quickstart-guide/conversation-flow",
+  "title": "Design Flows in Sequence Studio",
+  "description": "To build an assistant, you need to design a conversation flow.",
+  "source": "@site/docs/02-getting-started/03-quickstart-guide/03-conversation-flow.mdx",
+  "sourceDirName": "02-getting-started/03-quickstart-guide",
+  "slug": "/getting-started/quickstart-guide/conversation-flow",
+  "permalink": "/getting-started/quickstart-guide/conversation-flow",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Design Flows in Sequence Studio",
+    "sidebarTitle": "Design Flows in Sequence Studio",
+    "icon": "code-merge",
+    "iconType": "solid"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Add Knowledge to BrainVault",
+    "permalink": "/getting-started/quickstart-guide/knowledge-base"
+  },
+  "next": {
+    "title": "Test in DIRTbox",
+    "permalink": "/getting-started/quickstart-guide/testing"
+  }
+}

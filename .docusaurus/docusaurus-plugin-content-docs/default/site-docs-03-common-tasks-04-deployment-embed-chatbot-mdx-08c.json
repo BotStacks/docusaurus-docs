@@ -1,0 +1,26 @@
+{
+  "id": "common-tasks/deployment/embed-chatbot",
+  "title": "Embed the Chatbot on a Website",
+  "description": "Overview",
+  "source": "@site/docs/03-common-tasks/04-deployment/embed-chatbot.mdx",
+  "sourceDirName": "03-common-tasks/04-deployment",
+  "slug": "/common-tasks/deployment/embed-chatbot",
+  "permalink": "/common-tasks/deployment/embed-chatbot",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "embed-chatbot",
+    "title": "Embed the Chatbot on a Website"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Simulate Conversations and Debug",
+    "permalink": "/common-tasks/testing-and-improvement/simulate-conversations-and-debug"
+  },
+  "next": {
+    "title": "Track Usage & LLM Costs",
+    "permalink": "/common-tasks/usage-and-costs/track-costs"
+  }
+}

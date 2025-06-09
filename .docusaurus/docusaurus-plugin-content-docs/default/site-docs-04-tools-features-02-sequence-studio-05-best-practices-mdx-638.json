@@ -1,0 +1,27 @@
+{
+  "id": "tools-features/sequence-studio/best-practices",
+  "title": "Best Practices",
+  "description": "Tips and strategies for designing, testing, and maintaining flows in Sequence Studio.",
+  "source": "@site/docs/04-tools-features/02-sequence-studio/05-best-practices.mdx",
+  "sourceDirName": "04-tools-features/02-sequence-studio",
+  "slug": "/tools-features/sequence-studio/best-practices",
+  "permalink": "/tools-features/sequence-studio/best-practices",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "Best Practices",
+    "description": "Tips and strategies for designing, testing, and maintaining flows in Sequence Studio."
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Node Reference",
+    "permalink": "/tools-features/sequence-studio/node-reference"
+  },
+  "next": {
+    "title": "FAQ",
+    "permalink": "/tools-features/sequence-studio/faq"
+  }
+}

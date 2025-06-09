@@ -1,0 +1,30 @@
+{
+  "id": "getting-started/conceptual-overview",
+  "title": "How BotStacks Works (Conceptual Overview)",
+  "description": "Learn the conceptual overview of BotStacks.",
+  "source": "@site/docs/02-getting-started/02-conceptual-overview.mdx",
+  "sourceDirName": "02-getting-started",
+  "slug": "/getting-started/conceptual-overview",
+  "permalink": "/getting-started/conceptual-overview",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "How BotStacks Works (Conceptual Overview)",
+    "sidebarTitle": "how-botstacks-works",
+    "description": "Learn the conceptual overview of BotStacks.",
+    "icon": "meteor",
+    "iconType": "solid"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "What is BotStacks?",
+    "permalink": "/getting-started/what-is-botstacks"
+  },
+  "next": {
+    "title": "Quickstart Guide",
+    "permalink": "/category/quickstart-guide"
+  }
+}

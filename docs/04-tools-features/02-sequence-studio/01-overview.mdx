@@ -1,0 +1,48 @@
+---
+title: Overview
+description: Introduction to Sequence Studio, flows, nodes, and the visual builder in BotStacks.
+---
+
+import Card from '@site/src/components/Card';
+import CardGroup from '@site/src/components/CardGroup';
+
+# Sequence Studio Overview
+
+> **New to Sequence Studio?** See the [Build Flows Guide](../../common-tasks/conversation-design/build-flows) and [Understand Nodes](../../common-tasks/conversation-design/understand-nodes) for step-by-step tutorials.
+
+
+**Sequence Studio** is the visual flow builder at the heart of BotStacks. It lets you design, test, and manage conversational AI assistants using a drag-and-drop interface—no coding required.
+
+## What is a Flow?
+A **flow** is a step-by-step map of how your assistant interacts with users. Each step (or "node") represents an action, question, or response. Connections between nodes define how the conversation moves forward, branches, or loops.
+
+- **Flows** can be simple (Q&A bots) or complex (multi-step, multi-branch assistants).
+- **Nodes** are the building blocks—each does something specific (send a message, wait for input, call an API, etc.).
+- **Connections** are arrows that define the order and logic of execution between nodes.
+
+## Visual Builder
+Sequence Studio's canvas lets you:
+- Drag and drop nodes to build your flow visually
+- Connect nodes to define conversation logic
+- Configure each node's settings in a side panel
+- Preview and test your assistant in real time
+
+## Why Use Sequence Studio?
+- **No-code:** Build advanced assistants without programming
+- **Visual logic:** See and edit your conversation structure at a glance
+- **Rapid iteration:** Test, debug, and improve flows quickly
+- **Integrations:** Connect to APIs, knowledge bases, and external tools
+
+---
+
+<CardGroup cols={3}>
+  <Card title="Build Flows Guide" href="../../common-tasks/conversation-design/build-flows">
+    Step-by-step tutorial for building your first flow.
+  </Card>
+  <Card title="Understand Nodes" href="../../common-tasks/conversation-design/understand-nodes">
+    Learn about each node type and when to use them.
+  </Card>
+  <Card title="Node Reference" href="./node-reference">
+    Full technical details for every node in Sequence Studio.
+  </Card>
+</CardGroup> 

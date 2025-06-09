@@ -1,0 +1,153 @@
+---
+title: Brain Vault
+description: Comprehensive reference for all features, options, and best practices for Brain Vault knowledge management in BotStacks.
+---
+
+# Brain Vault: Full Feature Reference
+
+## Overview
+
+**Brain Vault** is the knowledge management engine of BotStacks. It acts as your assistant's memory, providing live, context-rich information to LLMs and conversation flows. Brain Vault is designed for accuracy, security, and scale—whether you're building a simple FAQ bot or a complex enterprise assistant.
+
+---
+
+## Supported Knowledge Source Types
+
+Brain Vault supports a variety of source types, each called a **Knowledge Source**:
+
+- **Single URL**: Ingests the content of a public web page (e.g., pricing, docs, release notes).
+- **Bulk URLs**: Add multiple URLs at once (newline-separated list). Ideal for catalogs, blogs, or documentation sets.
+- **Site Crawl**: Crawl a root URL and automatically ingest all reachable internal pages.
+- **File Upload**: Upload PDF, DOCX, TXT, or Markdown files (up to 50 MB each).
+- **Text Snippet**: Paste or type plain text directly (for FAQs, policies, or one-off info).
+
+> **File Size Limit:** 50 MB per upload.
+
+---
+
+## Storage and Plan-Based Limits
+
+The number of knowledge sources you can store depends on your subscription plan:
+
+| Plan                | Knowledge Sources |
+|---------------------|------------------|
+| Starter             | 50               |
+| Pro                 | 250              |
+| Pro+                | 500              |
+| Agency/Enterprise   | 3,000            |
+
+- **All plans**: Each source is indexed and available for live retrieval.
+- **Upgrade**: Increase limits by upgrading your plan.
+
+---
+
+## Organization & Prioritization
+
+Efficient knowledge management is critical for high-quality answers. Brain Vault treats all sources equally in retrieval, so:
+
+- **Use Descriptive Titles**: Name each source clearly (e.g., `Refund-Policy-2025`).
+- **Keep Sources Bite-Sized**: Split large files (manuals, PDFs) into smaller sections for more precise retrieval and lower token costs.
+- **Remove Stale Content**: Delete outdated docs and re-upload new versions to avoid conflicting answers.
+- **Preview Early & Often**: Use the Preview feature to test retrieval and fix issues before deploying.
+
+**Bulk Import:**
+- Use Bulk URLs or Site Crawl for large-scale imports.
+
+---
+
+## Integration with LLM Nodes
+
+Brain Vault is designed to work seamlessly with LLM (Large Language Model) nodes in Sequence Studio:
+
+- **Enable Brain Vault**: In the LLM node, toggle "Use Brain Vault" to allow the model to retrieve from your knowledge sources.
+- **Retrieval**: The LLM node will search the Vault and inject relevant snippets into the prompt for accurate, context-aware answers.
+- **Settings**: Combine with other LLM node options (model selection, system/user prompt, temperature, max tokens, top-p, chat history) for fine-tuned control.
+
+---
+
+## Retrieval, Search, and Ranking
+
+- **Vector Search**: Brain Vault uses vector embeddings to match user queries to the most relevant knowledge snippets.
+- **Ranking**: All sources are ranked by semantic similarity; quality and clarity of each source directly impact answer quality.
+- **No Manual Prioritization**: All sources are treated equally; use organization best practices for optimal results.
+
+---
+
+## Preview & Testing Features
+
+- **Preview Panel**: Instantly test how your assistant will answer questions using your current Brain Vault.
+- **Settings in Preview**:
+  - Model (GPT-4o, Claude, Gemini, etc.)
+  - Temperature (creativity vs. accuracy)
+  - Max Tokens (response length)
+  - Top P (diversity)
+  - System Prompt (persona/instructions)
+- **Feedback Loop**: Use Preview to quickly iterate on your Vault and settings before publishing.
+
+---
+
+## Best Practices & Tips
+
+- **Test a Variety of Questions**: Ensure your assistant can find and use the right source for different phrasings.
+- **Refine Data**: If answers are off, add more precise data or split large sources.
+- **System Prompt Tuning**: Adjust the system prompt for more specific or on-brand answers.
+- **Regular Clean-Up**: Remove or update sources as your business or documentation changes.
+
+---
+
+## Troubleshooting & FAQ
+
+<details>
+  <summary>My assistant gives the wrong answer or misses info.</summary>
+  <ul>
+    <li>Check if the correct document is present and well-titled.</li>
+    <li>Split large files into smaller, focused sections.</li>
+    <li>Use Preview to debug retrieval.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Can I edit a source without deleting it?</summary>
+  <p>Not currently. Download/copy, edit locally, and re-upload the revised file.</p>
+</details>
+
+<details>
+  <summary>How do I import/export all my sources?</summary>
+  <ul>
+    <li>Bulk import is supported (Bulk URLs, Site Crawl).</li>
+    <li>Export is not currently available.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Is my data secure?</summary>
+  <p>Brain Vault is designed for enterprise-grade security. Uploaded data is stored securely and only accessible to your workspace.</p>
+</details>
+
+<details>
+  <summary>What happens if I exceed my plan's limit?</summary>
+  <p>You'll be prompted to upgrade or remove sources to add more.</p>
+</details>
+
+<details>
+  <summary>Can I prioritize certain sources?</summary>
+  <p>No manual prioritization; use descriptive titles and split sources for best results.</p>
+</details>
+
+---
+
+## Limitations
+
+- **No source editing in place** (must re-upload to update)
+- **No manual ranking** (retrieval is semantic, not order-based)
+- **Export not available** (as of this release)
+- **50 MB per file**
+- **Plan-based source limits**
+
+---
+
+## See Also
+- [Adding Knowledge Sources](../common-tasks/knowledge-management/add-knowledge-sources)
+- [Organize & Prioritize Knowledge](../common-tasks/knowledge-management/prioritize-organize)
+- [Preview Assistant Responses](
+../common-tasks/knowledge-management/preview-responses)

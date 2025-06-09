@@ -1,0 +1,65 @@
+---
+title: "Slack Integration"
+description: "Connect your BotStacks assistant to Slack for powerful chat automation and collaboration."
+---
+
+## Overview
+
+Slack Integration allows your BotStacks AI Assistant to connect with Slack, letting users interact with your AI in Slack channels and direct messages.
+
+## Prerequisites
+
+- A Slack Workspace
+- Slack Developer access ([api.slack.com/apps](https://api.slack.com/apps))
+
+## Steps to Integrate
+
+### 1. Create a Slack App
+
+1. Go to [Slack API Apps](https://api.slack.com/apps) and click **Create New App**.
+2. Choose **From scratch**.
+3. Enter an app name and select your workspace.
+
+### 2. Configure Your App
+
+- Add a profile picture and description if desired.
+
+### 3. Add OAuth Scopes
+
+Go to **OAuth & Permissions**:
+- Add the following bot scopes:
+  - `app_mention:read`
+  - `chat:write`
+
+### 4. Install the App to Your Workspace
+
+- Click **Install to Workspace** and authorize.
+
+### 5. Get Your Bot OAuth Token
+
+- After installing, copy the **Bot User OAuth Token** and add it in your BotStacks Dashboard on the Integrations page.
+
+### 6. Get Your Signing Secret
+
+- Go to **Basic Information** in Slack App settings.
+- Copy the **Signing Secret** and add it in BotStacks Integrations.
+
+### 7. Subscribe to Events
+
+Go to **Event Subscriptions**:
+- Enable events.
+- Add your BotStacks webhook callback URL (found in the dashboard) as the **Request URL**.
+- Subscribe to:
+  - `message.im`
+  - `app_mention`
+- Save and reinstall the app if prompted.
+
+### 8. Invite Your App to a Channel
+
+- Mention your app in any Slack channel. Slack will prompt you to invite it—click **Invite Them**.
+
+## Done!
+
+Your AI Assistant will now respond in Slack channels and DMs.
+
+<!-- Add screenshots here if needed -->

@@ -1,0 +1,94 @@
+---
+title: Adding Knowledge Sources to the Brain Vault
+description: Learn how to populate your BotStacks Brain Vault with URLs, files, crawls, and more so your assistant stays accurate.
+---
+
+import Card from '@site/src/components/Card';
+import CardGroup from '@site/src/components/CardGroup';
+import Link from '@docusaurus/Link';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Adding Knowledge Sources to the Brain Vault
+
+:::info Prerequisite
+This guide assumes you have already created a **BotStack** and are inside **Sequence Studio**. If not, complete the [Create a New Assistant](../../getting-started/quickstart-guide/create-botstack) tutorial first.
+:::
+
+## Why the Brain Vault Matters
+
+The **Brain Vault** is your AI assistant's memory bank. Every document, URL, or snippet you add becomes a **Knowledge Source** that the assistant can reference live, reducing hallucinations and keeping answers on‑brand.
+
+## What Can You Add as a Knowledge Source?
+
+<CardGroup>
+  <Card title="Single URL">Ingest the content of one public web page—great for a pricing page or release notes.</Card>
+  <Card title="Bulk URLs">Paste a list of URLs (newline-separated) to add multiple pages at once. Perfect for product catalogs or blogs.</Card>
+  <Card title="Site Crawl">Start at a root URL and let BotStacks follow internal links automatically.</Card>
+  <Card title="File Upload">PDF, DOCX, TXT, or Markdown up to **50 MB** each.</Card>
+  <Card title="Text Snippet">Quick one‑off FAQs or policy paragraphs you paste directly.</Card>
+</CardGroup>
+
+## Plan-based Storage Limits
+
+<CardGroup>
+  <Card title="Starter">Includes **50** knowledge sources.</Card>
+  <Card title="Pro">Includes **250** knowledge sources.</Card>
+  <Card title="Pro+">Includes **500** knowledge sources.</Card>
+  <Card title="Agency / Enterprise">Includes **3,000** knowledge sources.</Card>
+</CardGroup>
+
+## Step-by-Step: Add Your First Source
+
+1. Open the **Brain Vault** pane in Sequence Studio.
+2. Click **Add Source**.
+
+<img alt="Brain Vault UI" src="/images/build-first-assistant/add-source.png" />
+
+
+<Tabs groupId="source-type">
+  <TabItem value="url" label="Single URL" id="add-url">
+
+3. Choose **URL** as the source type.  
+4. Write a descriptive name.
+5. Paste the URL.
+6. Click **Add source(s)**.
+
+  </TabItem>
+  <TabItem value="bulk" label="Bulk URLs" id="bulk-urls">
+
+3. Choose **URL** as the source type.  
+4. Write a descriptive name.
+5. Paste a newline‑separated list of URLs (one per line). 
+6. Click **Add source(s)**. 
+
+  </TabItem>
+  <TabItem value="file" label="File Upload" id="file-upload">
+
+3. Choose **File** as the source type.  
+4. Write a descriptive name.
+2. Drag‑and‑drop or browse for PDF, DOCX, TXT, or MD (≤ 50 MB).  
+6. Click **Add source(s)**.
+
+  </TabItem>
+  <TabItem value="crawl" label="Site Crawl" id="site-crawl">
+
+3. Choose **Site Crawl** as the source type.
+4. Enter the root URL (e.g., `https://botstacks.ai`).  
+5. Click **Start Crawl** and wait.
+6. When the crawl completes, click **Add source(s)**.
+
+  </TabItem>
+  <TabItem value="text" label="Text Snippet" id="text-snippet">
+
+3. Select **Text** as the source type.
+4. Write a descriptive name.
+5. Paste or type plaintext into the text area.
+4. Click **Add source(s)**.
+
+  </TabItem>
+</Tabs>
+
+## Next Steps
+
+With your Brain Vault stocked, connect it to an **AI Node** in your Conversation Flow, then chat in **DIRTbox**. When answers look good, publish your assistant via the Web Widget or SDK.

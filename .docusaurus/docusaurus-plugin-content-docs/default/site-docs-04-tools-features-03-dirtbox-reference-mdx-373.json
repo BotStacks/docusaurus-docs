@@ -1,0 +1,27 @@
+{
+  "id": "tools-features/dirtbox-reference",
+  "title": "DIRTBox",
+  "description": "Full reference for all DIRTBox testing, test case, and transcript features in BotStacks.",
+  "source": "@site/docs/04-tools-features/03-dirtbox-reference.mdx",
+  "sourceDirName": "04-tools-features",
+  "slug": "/tools-features/dirtbox-reference",
+  "permalink": "/tools-features/dirtbox-reference",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "DIRTBox",
+    "description": "Full reference for all DIRTBox testing, test case, and transcript features in BotStacks."
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "FAQ",
+    "permalink": "/tools-features/sequence-studio/faq"
+  },
+  "next": {
+    "title": "Activation Kit",
+    "permalink": "/tools-features/activation-kit-reference"
+  }
+}

@@ -1,0 +1,47 @@
+---
+title: Organize & Prioritize Knowledge
+description: Practical tips to keep your Brain Vault clean and make sure the most relevant information powers your assistant.
+---
+
+import Card from '@site/src/components/Card';
+import CardGroup from '@site/src/components/CardGroup';
+import Link from '@docusaurus/Link';
+
+## Why organization matters
+
+A tidy Brain Vault reduces noise in retrieval, speeds up indexing, and keeps your assistant's answers sharp. Because every knowledge source is treated equally by the retrieval engine, the *quality* and *clarity* of each file or URL determine which snippets the LLM surfaces first.
+
+## Four habits for a healthy Vault
+
+<CardGroup>
+  <Card title="Use descriptive titles">When you upload a file or paste a URL, give it a short, human‑friendly name such as <code>Refund‑Policy‑2025</code>. The title appears in search debugging and makes future clean‑ups easier.</Card>
+  <Card title="Keep sources bite‑sized">Split long PDFs or manuals into sections (e.g., one chapter per file). Smaller chunks give the vector search engine more precise hits and lower token costs.</Card>
+  <Card title="Remove stale content">Outdated docs cause conflicting answers. Delete superseded versions and re‑upload new ones so the assistant never quotes old pricing or policy text.</Card>
+  <Card title="Preview early & often">Use the <strong>Preview</strong> button in Brain Vault to ask sample questions. If the response cites the wrong source, fix the Vault before shipping your flow.</Card>
+</CardGroup>
+
+## Import efficiently
+
+If you have many pages to add, use one of the bulk import tools instead of manual uploads:
+
+* **Bulk URLs:** Paste or CSV‑upload dozens of links in one go.  
+* **Site crawl:** Point BotStacks at a root URL and let it ingest every reachable page automatically.
+
+## Next steps
+
+* If you haven't added any data yet, start with **[Add Knowledge Sources](./add-knowledge-sources)**.  
+* When your Vault looks clean, head to **DIRTbox** to test the whole conversation flow.
+
+### FAQ
+
+<details>
+<summary>How do I fix answers that still look wrong after clean‑up?</summary>
+
+Double‑check that the correct document actually contains the answer. If not, add it. If yes, try shortening that document into more focused subsections so retrieval returns a tighter snippet.
+</details>
+
+<details>
+<summary>Can I edit a source without deleting it?</summary>
+
+At the moment, changes require a re‑upload. Download or copy the existing content, edit locally, then upload the revised file.
+</details>

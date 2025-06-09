@@ -1,0 +1,43 @@
+---
+title: Preview Assistant Responses with BrainVault
+description: Test how your assistant will answer questions using your Brain Vault knowledge sources, and fine-tune model settings for best results.
+---
+
+import Card from '@site/src/components/Card';
+import CardGroup from '@site/src/components/CardGroup';
+
+# Preview Assistant Responses with BrainVault
+
+The **Preview** feature in Brain Vault lets you instantly test how your assistant will answer questions using your uploaded knowledge sources—before you publish or update your assistant.
+
+This is the fastest way to check if your data is being used correctly, and to fine-tune your model settings for the best possible answers.
+
+## How to Preview Responses
+
+1. Open the **Brain Vault** pane in Sequence Studio.
+2. Click the <strong>Preview</strong> button in the top right corner.
+
+<img alt="Brain Vault Preview" src="/images/build-first-assistant/preview.png" />
+
+3. Enter a sample question in the **Question** box.
+
+<img alt="Preview Panel" src="/images/build-first-assistant/knowledge-base-preview.png" style={{maxWidth: '600px'}} />
+
+
+(Optional) Click the <strong>Settings</strong> button to adjust:
+   - **Model** (e.g., GPT-4o mini, Claude, Gemini, etc.)
+   - **Temperature** (controls creativity vs. accuracy)
+   - **Max Tokens** (limits response length)
+   - **Top P** (controls diversity of responses)
+   - **System Prompt** (set the assistant's persona or instructions)
+
+<img alt="Settings Panel" src="/images/common-tasks/brain-vault-settings.png" />
+
+## Tips for Best Results
+
+- **Test a variety of questions** to make sure your assistant can find and use the right knowledge source.
+- If the answer isn't accurate, try:
+  - Adding or updating your knowledge sources
+  - Adjusting the system prompt for more specific instructions
+  - Tweaking model settings (lower temperature for more factual answers)
+- Use the preview as a quick feedback loop before deploying changes to your live assistant.

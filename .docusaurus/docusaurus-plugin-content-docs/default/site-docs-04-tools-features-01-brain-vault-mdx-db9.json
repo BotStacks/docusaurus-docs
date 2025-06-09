@@ -1,0 +1,27 @@
+{
+  "id": "tools-features/brain-vault",
+  "title": "Brain Vault",
+  "description": "Comprehensive reference for all features, options, and best practices for Brain Vault knowledge management in BotStacks.",
+  "source": "@site/docs/04-tools-features/01-brain-vault.mdx",
+  "sourceDirName": "04-tools-features",
+  "slug": "/tools-features/brain-vault",
+  "permalink": "/tools-features/brain-vault",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Brain Vault",
+    "description": "Comprehensive reference for all features, options, and best practices for Brain Vault knowledge management in BotStacks."
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Tools & Features",
+    "permalink": "/category/tools--features"
+  },
+  "next": {
+    "title": "Sequence Studio",
+    "permalink": "/category/sequence-studio"
+  }
+}

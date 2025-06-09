@@ -1,0 +1,65 @@
+---
+title: "Discord Integration"
+description: "Connect your BotStacks AI Assistant with Discord for seamless conversational experiences."
+---
+
+## Overview
+
+The Discord Integration lets users interact with your AI Assistant on any Discord server via channels or direct messages.
+
+## Prerequisites
+
+- A Discord Server
+- Access to the [Discord Developer Portal](https://discord.com/developers/applications)
+
+## Steps to Integrate
+
+### 1. Create a Discord App
+
+1. Visit the [Discord Developer Portal](https://discord.com/developers/applications) and click **New Application**.
+2. Enter a name and create the app.
+
+### 2. Customize Your App
+
+- Optionally, upload an icon and set a description.
+
+### 3. Create a Bot
+
+- Go to the **Bot** tab and click **Add Bot**.
+
+### 4. Get Your App Token
+
+- Under the Bot section, click **Reset Token** (to reveal the token).
+- Copy and save the **Bot Token** (it will only be shown once).
+
+### 5. Add Token and Client ID to BotStacks
+
+- In BotStacks Dashboard, add your **App Token** and **Client ID** (found in the OAuth2 tab).
+
+### 6. Enable Privileged Gateway Intents
+
+- In the Bot settings, enable:
+  - **Presence Intent**
+  - **Server Members Intent**
+  - **Message Content Intent**
+
+### 7. Set OAuth2 Bot Permissions
+
+- Go to **OAuth2 > URL Generator**.
+- Add the **Bot** scope and these permissions:
+  - Send Messages
+  - Send Messages in Threads
+  - Embed Links
+  - Attach Files
+  - Read Message History
+  - Use External Emojis
+  - Use External Stickers
+  - Add Reactions
+
+### 8. Invite Your App to Your Server
+
+- Copy the generated URL, open it in your browser, and invite your bot to your server.
+
+Your AI Assistant is now ready to interact on Discord.
+
+<!-- Add screenshots here if needed -->

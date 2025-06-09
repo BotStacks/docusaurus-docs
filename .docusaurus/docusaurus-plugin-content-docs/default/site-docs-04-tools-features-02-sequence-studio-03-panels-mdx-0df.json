@@ -1,0 +1,27 @@
+{
+  "id": "tools-features/sequence-studio/panels",
+  "title": "Panels",
+  "description": "Reference for panels: Variables, Brain Vault, Revisions, and Intents in Sequence Studio.",
+  "source": "@site/docs/04-tools-features/02-sequence-studio/03-panels.mdx",
+  "sourceDirName": "04-tools-features/02-sequence-studio",
+  "slug": "/tools-features/sequence-studio/panels",
+  "permalink": "/tools-features/sequence-studio/panels",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Panels",
+    "description": "Reference for panels: Variables, Brain Vault, Revisions, and Intents in Sequence Studio."
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Design Features",
+    "permalink": "/tools-features/sequence-studio/design-features"
+  },
+  "next": {
+    "title": "Node Reference",
+    "permalink": "/tools-features/sequence-studio/node-reference"
+  }
+}

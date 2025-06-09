@@ -1,0 +1,87 @@
+---
+title: DIRTBox
+description: Full reference for all DIRTBox testing, test case, and transcript features in BotStacks.
+---
+
+# DIRTBox: Full Feature Reference
+
+The **DIRTBox** is BotStacks' integrated environment for testing, debugging, and analyzing your AI assistant. It includes three powerful panels: DIRTBox (interactive testing), Tests (automated test cases), and Transcripts (logs and analytics).
+
+---
+
+## DIRTBox Panels Overview
+
+| Panel       | Purpose                                      | Key Features                                 |
+|-------------|----------------------------------------------|----------------------------------------------|
+| DIRTBox     | Interactive, real-time testing of your bot   | Simulate user chats, preview flows, debug    |
+| Tests       | Create and run automated test cases          | Add test cases, check expected responses     |
+| Transcripts | Review logs and analytics of conversations   | View, filter, and analyze chat transcripts   |
+
+---
+
+## DIRTBox Panel (Interactive Testing)
+
+- **Purpose:** Simulate real user conversations with your assistant in a safe, sandboxed environment.
+- **Features:**
+  - Type messages as a user and see live responses
+  - Preview how flows, logic, and knowledge retrieval work
+  - Debug issues before deploying to production
+  - Test variables, branching, and edge cases
+- **Best Practices:**
+  - Use DIRTBox to catch issues early and iterate quickly
+  - Try a variety of user inputs and scenarios
+  - Use the panel before every major publish
+
+---
+
+## Tests Panel (Automated Test Cases)
+
+- **Purpose:** Create, manage, and run automated test cases to ensure your assistant behaves as expected.
+- **Features:**
+  - Add test cases with user/AI message pairs
+  - Define expected responses for each scenario
+  - Run all tests to catch regressions or logic errors
+  - Maintain a suite of tests for ongoing quality
+- **Best Practices:**
+  - Add tests for critical flows and edge cases
+  - Run tests after every major change
+  - Use failed tests to pinpoint and fix bugs
+
+---
+
+## Transcripts Panel (Logs & Analytics)
+
+- **Purpose:** Review and analyze real and test conversations for debugging, quality control, and improvement.
+- **Features:**
+  - View transcripts of all chat sessions (live and draft)
+  - Filter by session type, user, or version
+  - Inspect message history, timestamps, and metadata
+  - Download or export transcripts for deeper analysis (if available)
+- **Best Practices:**
+  - Regularly review transcripts to spot misunderstandings or failures
+  - Use real-world data to guide improvements
+  - Audit for compliance or quality control
+
+---
+
+## FAQ
+
+<details>
+  <summary>What's the difference between DIRTBox and the Tests panel?</summary>
+  <p>DIRTBox is for interactive, manual testing—like chatting with your bot as a user. The Tests panel is for automated, repeatable test cases that check specific scenarios and expected responses.</p>
+</details>
+
+<details>
+  <summary>Can I use DIRTBox to test unpublished changes?</summary>
+  <p>Yes! DIRTBox always tests your current draft, so you can preview changes before publishing.</p>
+</details>
+
+<details>
+  <summary>How do I add a new test case?</summary>
+  <p>Go to the Tests panel, click "Add Test Case," and specify the user message and expected AI response. Save and run your tests to check for correctness.</p>
+</details>
+
+<details>
+  <summary>What can I do with transcripts?</summary>
+  <p>Transcripts let you review, filter, and analyze all conversations—both live and in testing. Use them to debug, improve flows, and monitor assistant quality.</p>
+</details>

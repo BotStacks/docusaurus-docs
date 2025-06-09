@@ -1,0 +1,62 @@
+---
+id: logs-analytics
+title: Review Logs and Analytics
+sidebar_label: Logs & Analytics
+---
+
+# Review Logs and Analytics
+
+BotStacks makes it easy to review logs, monitor assistant performance, and analyze every interaction with your AI bots—all from a single location in the dashboard.
+
+## Where to Find Transcripts
+
+You can review all chat interactions—whether in testing (drafts) or live deployments—using the **DIRTbox** tab in your workspace.
+
+### Steps:
+
+1. **Navigate to DIRTbox**
+   - In the dashboard, select your assistant.
+   - Click the **DIRTbox** tab at the top.
+
+2. **Open the Transcripts Pane**
+   - On the right side, select the **Transcripts** tab.
+   - Here you'll see a log of all assistant-user conversations and sessions.
+
+<img src="/images/common-tasks/transcripts.png" alt="Transcripts Pane" style={{borderRadius: '14px', boxShadow: '0 1px 8px rgba(0,0,0,0.12)', margin: '1.5em 0', maxWidth: '600px'}} />
+
+## Transcript Sources and Filters
+
+At the top of the transcripts pane, you can filter which chat sessions you want to review:
+
+- **live:**  
+  Sessions with users interacting with your deployed assistant (e.g., on your website or app).
+- **draft:**  
+  Interactions run directly inside DIRTbox for testing and debugging, not seen by real users.
+- **Other labels (e.g., `20e1`, `fbca`, `42b4`):**  
+  These are unique identifiers for different test runs, user sessions, or classes of conversations—typically, these help you organize or drill down into specific scenarios, versions, or user types. You may see these change based on how your workspace and users are structured.
+
+You can toggle any combination of these filters to quickly find the sessions that matter to you.
+
+## Viewing and Analyzing Sessions
+
+Click on any transcript in the list to view the full conversation history.  
+You’ll see all user and assistant messages, including timestamps and, if available, any metadata for debugging.
+
+<img src="/images/common-tasks/transcripts-example.png" alt="Transcript Example" style={{borderRadius: '14px', boxShadow: '0 1px 8px rgba(0,0,0,0.12)', margin: '1.5em 0', maxWidth: '600px'}} />
+
+**Common uses for the logs and transcripts view:**
+- Debug assistant responses to real or test user inputs
+- Review edge cases or failures to improve flows
+- Audit for compliance or quality control
+- Understand user journeys, pain points, or high-traffic paths
+
+## Tips for Effective Analytics
+
+- Use **draft** mode in DIRTbox to safely test new conversation flows without impacting real users.
+- Review **live** transcripts regularly to monitor production performance and spot issues early.
+- Use unique transcript IDs to correlate logs with user bug reports or analytics events.
+- Download or export transcripts as needed for deeper analysis (feature availability may depend on your plan).
+
+---
+
+_Transcripts and logs are foundational for building high-quality, reliable assistants. Make it a habit to regularly review this section as you iterate on your BotStacks projects._

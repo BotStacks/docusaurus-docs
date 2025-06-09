@@ -1,0 +1,24 @@
+{
+  "id": "common-tasks/testing-and-improvement/simulate-conversations-and-debug",
+  "title": "Simulate Conversations and Debug",
+  "description": "Before you launch your assistant, it's crucial to simulate real conversations and debug any issues. The DIRTBox and Tests tabs make this easy.",
+  "source": "@site/docs/03-common-tasks/03-testing-and-improvement/03-simulate-conversations-and-debug.mdx",
+  "sourceDirName": "03-common-tasks/03-testing-and-improvement",
+  "slug": "/common-tasks/testing-and-improvement/simulate-conversations-and-debug",
+  "permalink": "/common-tasks/testing-and-improvement/simulate-conversations-and-debug",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Analyze and Improve Performance",
+    "permalink": "/common-tasks/testing-and-improvement/analyze-and-improve-performance"
+  },
+  "next": {
+    "title": "Embed the Chatbot on a Website",
+    "permalink": "/common-tasks/deployment/embed-chatbot"
+  }
+}

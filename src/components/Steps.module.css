@@ -1,0 +1,48 @@
+.steps {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+    margin: 1.5em 0;
+  }
+  
+  .step {
+    background: var(--ifm-background-surface-color, #fff);
+    border: 1px solid var(--ifm-color-emphasis-200, #eee);
+    border-radius: 8px;
+    margin-bottom: 1.5em;
+    padding: 1.1em 1.5em;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(60, 60, 100, 0.06);
+  }
+  
+  .stepHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    margin-bottom: 0.7em;
+  }
+  
+  .stepNumber {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background: var(--ifm-color-primary, #2563eb);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 2em;
+  }
+  
+  .stepTitle {
+    font-size: 1.13em;
+    font-weight: 600;
+    color: var(--ifm-font-color-base);
+  }
+  
+  .stepBody {
+    margin-left: 2.5em;
+    margin-top: 0.1em;
+  }
+  

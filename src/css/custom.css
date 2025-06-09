@@ -1,0 +1,226 @@
+:root {
+  --ifm-color-primary: #5D86FF;
+  --ifm-color-primary-light: #4A75FF;
+  --ifm-color-primary-dark: #7487FF;
+  --ifm-color-primary-lighter: #5D86FF;
+  --ifm-color-primary-lightest: #809EFF;
+  --ifm-color-primary-darker: #2047CC;
+  --ifm-color-primary-darkest: #163299;
+  --side-padding: clamp(1rem, 10vw, 10rem);
+}
+
+html[data-theme='dark'] {
+  --ifm-background-color: #0d0f14;
+  --ifm-background-surface-color: #1d212d;
+  --ifm-background-surface-color-alt: #161a22;
+
+  --ifm-font-color-base: #9ca3af;
+
+  --ifm-color-primary: #5D86FF;
+  --ifm-color-primary-light: #4A75FF;
+  --ifm-color-primary-dark: #2047CC;
+  --ifm-color-primary-lighter: #5D86FF;
+  --ifm-color-primary-lightest: #809EFF;
+  --ifm-color-primary-darker: #163299;
+}
+
+/* Make header text white in dark mode */
+html[data-theme='dark'] h1,
+html[data-theme='dark'] h2,
+html[data-theme='dark'] h3,
+html[data-theme='dark'] h4,
+html[data-theme='dark'] h5,
+html[data-theme='dark'] h6 {
+  color: #fff;
+}
+
+/* Navbar and Footer background */
+.navbar,
+.footer {
+  background-color: var(--ifm-background-color);
+  box-shadow: none;
+  border: none;
+}
+
+.footer__items {
+  /* the <ul> that holds every link  */
+  display: flex;
+  /* turn it into a flex-container   */
+  flex-wrap: wrap;
+  /* let it wrap on small screens    */
+  gap: 0.75rem;
+  /* space between links             */
+  list-style: none;
+  /* kill bullets (safari quirk)     */
+  padding-left: 0;
+  /* align neatly with logo          */
+}
+
+.footer__item {
+  /* each individual <li>            */
+  margin: 0;
+  /* strip default left-margin       */
+}
+
+/* --- Navbar: keep "Dashboard" text white (unchanged) --- */
+.dashboard-link {
+  color: #fff !important;
+}
+
+/* 1. Restore side padding for the whole page */
+.main-wrapper {
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
+}
+
+/* 2. Add extra space between sidebar and main content */
+.main-wrapper .container {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+/* 3. Add side padding to the navbar */
+.navbar__inner {
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
+}
+
+.navbar::after {
+  content: "";
+  position: absolute;
+  left: var(--side-padding);
+  right: var(--side-padding);
+  bottom: 0;
+  height: 1px;
+  background: var(--ifm-color-emphasis-200);
+}
+
+/* Steps Container */
+.steps {
+  counter-reset: step-counter;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Individual Step */
+.steps li {
+  display: flex;
+  align-items: center;
+  /* Vertical centering */
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  border-left: 4px solid var(--ifm-color-primary);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: background-color 0.3s, border-left-color 0.3s;
+}
+
+/* Dark mode support */
+html[data-theme='dark'] .steps li {
+  background-color: var(--ifm-background-surface-color);
+  border-left-color: var(--ifm-color-primary);
+}
+
+/* Step Counter */
+.steps li::before {
+  counter-increment: step-counter;
+  content: counter(step-counter);
+  width: 40px;
+  height: 40px;
+  background-color: var(--ifm-color-primary);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+/* Dark mode support for step counter */
+html[data-theme='dark'] .steps li::before {
+  background-color: var(--ifm-color-primary-lighter);
+  color: #ffffff;
+}
+
+/* Step Text */
+.steps li strong {
+  margin: 0;
+  /* Optionally, set line-height to match the step number's height */
+  line-height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.steps li br {
+  display: none; /* Prevents <br /> from adding extra height */
+}
+
+.steps li p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Dark mode text colors */
+html[data-theme='dark'] .steps li strong {
+  color: #ffffff;
+}
+
+html[data-theme='dark'] .steps li p {
+  color: var(--ifm-font-color-base);
+}
+
+/* Hover Effect */
+.steps li:hover {
+  background-color: var(--ifm-color-primary-lightest);
+  border-left-color: var(--ifm-color-primary-darkest);
+}
+
+/* Dark Mode Hover Effect */
+html[data-theme='dark'] .steps li:hover {
+  background-color: var(--ifm-background-surface-color-alt);
+  border-left-color: var(--ifm-color-primary-darker);
+}
+
+/* Active State */
+.steps li.active {
+  background-color: var(--ifm-color-primary-lighter);
+  border-left-color: var(--ifm-color-primary-dark);
+  color: #ffffff;
+}
+
+/* Dark Mode Active State */
+html[data-theme='dark'] .steps li.active {
+  background-color: var(--ifm-color-primary-darker);
+  border-left-color: var(--ifm-color-primary);
+  color: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.navbar__logo img {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* 1  Contain the zoomed picture inside the *logical* viewport */
+.medium-zoom-image--opened {
+  max-inline-size: 100vw !important;
+  /* width ≤ viewport width  */
+  max-block-size: 100vh !important;
+  /* height ≤ viewport height */
+  /* ↓ classic fallbacks for older browsers ↓ */
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+}

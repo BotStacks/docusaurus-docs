@@ -1,0 +1,45 @@
+---
+title: "WhatsApp Integration"
+description: "Connect BotStacks to WhatsApp for automated messaging on the world's most popular chat platform."
+---
+
+## Overview
+
+BotStacks WhatsApp Integration lets your AI Assistant send and receive messages on WhatsApp, automating customer support or outreach.
+
+## Prerequisites
+
+- Meta Developer Account: [developers.facebook.com](https://developers.facebook.com/)
+- Meta Business Account
+
+## Steps to Integrate
+
+### 1. Create an App
+
+1. Go to [Meta Developer Apps](https://developers.facebook.com/apps).
+2. Click **Create App**, select **Other**, choose **Business** as type.
+3. Fill out name and email.
+
+### 2. Set Up WhatsApp
+
+- In the dashboard, select WhatsApp and click **Start using the API**.
+- Choose your Meta Business Account and continue.
+
+### 3. Configure Webhook
+
+- Click **Edit Webhook**.
+- Add the Callback URL and Verify Token (from BotStacks Integrations page).
+- Switch app mode from Development to Live.
+
+- Edit webhook fields, enable **Messages** to receive incoming user messages.
+
+### 4. Add Tokens and Phone Number ID
+
+- Copy your **Permanent WhatsApp Token** and **WhatsApp Phone Number ID** from Meta dashboard.
+- Enter them in the BotStacks Integrations page.
+
+> _Note_: Phone Number ID is a 15-digit value found in Meta API Setup. Temporary tokens expire when the page is refreshed; always use the permanent one.
+
+Your WhatsApp AI Assistant is now ready to chat.
+
+<!-- Add screenshots here if needed -->

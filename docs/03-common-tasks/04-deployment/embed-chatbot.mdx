@@ -1,0 +1,73 @@
+---
+id: embed-chatbot
+title: Embed the Chatbot on a Website
+---
+
+import Link from '@docusaurus/Link';
+import Card from '@site/src/components/Card';
+import CardGroup from '@site/src/components/CardGroup';
+
+## Overview
+
+Learn how to deploy your BotStacks assistant to your website using the Web Widget. This guide walks you through publishing your assistant and embedding it seamlessly into your site's HTML.
+
+## Prerequisites
+
+Before embedding the chatbot, ensure you've:
+
+- **Built and tested** your assistant using the [Sequence Studio](https://www.botstacks.ai/sequence-studio).
+- **Published** your assistant to make it live.
+
+## Publishing Your Assistant
+
+<img src="/images/common-tasks/DIRTBox.png" alt="DIRTBox" />
+
+All changes are saved as drafts. To publish:
+
+1. Navigate to your assistant in the BotStacks dashboard.
+2. Click the **Publish** button at the top-right corner.
+
+
+
+> **Note:** Only published assistants can be embedded on your website.
+
+## Customizing the Web Widget
+
+To customize how your chatbot will look on your site:
+
+1. From the dashboard, click **Activate** within DIRTbox for your assistant.
+2. On the customization screen, you can modify many options, including (but not limited to):
+   - **Name**: Set the display name for your assistant.
+   - **Description**: Add a short greeting or message for users.
+   - **Main color**: Change the color to fit your branding.
+   - **Widget position**: Choose where the widget appears, such as bottom right.
+   - **Launcher and Avatar**: Upload a custom avatar or launcher image.
+   - **Launcher animations**: Set opening/closing GIFs for the launcher.
+   - **Theme**: Switch between light and dark widget styles.
+   - **Additional settings**: Configure if the widget opens immediately on page load, or other advanced behaviors.
+
+> You can experiment with these settings to match your website’s look and feel.
+
+<img src="/images/common-tasks/customize.png" alt="DIRTBox" />
+
+## Embedding the Chatbot
+
+After customization:
+
+1. Copy the generated code snippet from the Web Widget section.
+2. Paste it just before the closing `</body>` tag on every page of your website where you want the chatbot to appear.
+
+Example:
+
+```html
+<!-- BotStacks Chat Widget -->
+<script type="module">
+  import ChatBot from 'https://cdn.botstacks.ai/widget.js';
+  ChatBot.init({
+    botId: 'your-bot-id',
+    position: 'bottom-right',
+    themeColor: '#4A90E2',
+    avatar: 'https://yourdomain.com/path-to-avatar.png',
+    welcomeMessage: 'Hi there! How can I assist you today?'
+  });
+</script>

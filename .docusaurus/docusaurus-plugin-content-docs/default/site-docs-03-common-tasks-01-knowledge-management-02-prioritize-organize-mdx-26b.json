@@ -1,0 +1,27 @@
+{
+  "id": "common-tasks/knowledge-management/prioritize-organize",
+  "title": "Organize & Prioritize Knowledge",
+  "description": "Practical tips to keep your Brain Vault clean and make sure the most relevant information powers your assistant.",
+  "source": "@site/docs/03-common-tasks/01-knowledge-management/02-prioritize-organize.mdx",
+  "sourceDirName": "03-common-tasks/01-knowledge-management",
+  "slug": "/common-tasks/knowledge-management/prioritize-organize",
+  "permalink": "/common-tasks/knowledge-management/prioritize-organize",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Organize & Prioritize Knowledge",
+    "description": "Practical tips to keep your Brain Vault clean and make sure the most relevant information powers your assistant."
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Adding Knowledge Sources to the Brain Vault",
+    "permalink": "/common-tasks/knowledge-management/add-knowledge-sources"
+  },
+  "next": {
+    "title": "Preview Assistant Responses with BrainVault",
+    "permalink": "/common-tasks/knowledge-management/preview-responses"
+  }
+}

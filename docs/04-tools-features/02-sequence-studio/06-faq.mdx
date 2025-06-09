@@ -1,0 +1,51 @@
+---
+title: FAQ
+description: Frequently asked questions about Sequence Studio, flows, and nodes.
+---
+
+# Sequence Studio: Frequently Asked Questions
+
+<details>
+  <summary>How do I start building a flow in Sequence Studio?</summary>
+  <p>Begin by dragging a Start node onto the canvas. Connect it to other nodes (e.g., AI Model, Wait for Reply) to define your conversation logic. See the <a href="../../02-common-tasks/02-conversation-design/01-build-flows">Build Flows Guide</a> for a step-by-step walkthrough.</p>
+</details>
+
+<details>
+  <summary>What's the difference between the AI Model node and the Text Block node?</summary>
+  <p>The AI Model node generates dynamic responses using an LLM (e.g., GPT-4), while the Text Block node outputs a fixed, static message. Use AI Model for open-ended or personalized replies; use Text Block for instructions or canned responses.</p>
+</details>
+
+<details>
+  <summary>How do I use variables in my flows?</summary>
+  <p>Define variables in the Variables sidebar tab. Reference them in node prompts, conditions, or API calls using curly braces (e.g., <code>user_name</code>). See <a href="../../02-common-tasks/02-conversation-design/03-conditions-logic">Conditions & Logic</a> for advanced usage.</p>
+</details>
+
+<details>
+  <summary>How can I test and debug my flows?</summary>
+  <p>Use the built-in preview to simulate conversations. For deeper testing, use the DIRTbox to try different scenarios and review logs/transcripts. See <a href="../../02-common-tasks/04-testing-and-improvement/01-test-in-dirtbox">Test in DIRTbox</a> for more.</p>
+</details>
+
+<details>
+  <summary>What's the best way to handle branching logic?</summary>
+  <p>Use Condition nodes for if/else logic based on variables, and Intent Classify nodes for AI-based intent routing. Combine both for advanced flows. See <a href="../../02-common-tasks/02-conversation-design/03-conditions-logic">Conditions & Logic</a> for examples.</p>
+</details>
+
+<details>
+  <summary>How do I collaborate with my team?</summary>
+  <p>Use the Revisions tab to track changes, add notes, and roll back if needed. Agree on naming conventions and flow structure for consistency. See <a href="./05-best-practices.mdx">Best Practices</a> for more tips.</p>
+</details>
+
+<details>
+  <summary>How do I scale my flows as they get more complex?</summary>
+  <p>Break large flows into smaller, modular sub-flows. Reuse common patterns, and keep your canvas organized. Regularly review and refactor as your assistant grows. See <a href="./05-best-practices.mdx">Best Practices</a> for scaling advice.</p>
+</details>
+
+<details>
+  <summary>Can I integrate with external APIs or databases?</summary>
+  <p>Yes! Use the API Call node to connect to RESTful APIs. Configure the request method, URL, headers, and body as needed. Reference API results in downstream nodes for dynamic flows.</p>
+</details>
+
+<details>
+  <summary>What should I do if my assistant isn't responding as expected?</summary>
+  <p>Check your node connections, variable references, and logic. Use the preview and DIRTbox to debug. Review logs for errors or unexpected behavior. See <a href="./05-best-practices.mdx">Best Practices</a> for troubleshooting steps.</p>
+</details> 

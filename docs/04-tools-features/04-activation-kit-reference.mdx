@@ -1,0 +1,129 @@
+---
+title: Activation Kit
+description: Full reference for all Activation Kit widget options and deployment settings in BotStacks.
+---
+
+# Activation Kit: Full Feature Reference
+
+The **Activation Kit** in BotStacks lets you deploy, customize, and brand your AI assistant's web widget. This reference covers every option available in the Activate tab, including installation, appearance, and advanced settings.
+
+---
+
+## Installation & Embedding
+
+### 1. Meta Tag
+Add the provided `<meta charset="UTF-8">` tag inside the `<head>` of every page where you want the widget to appear. This ensures proper character encoding for the widget.
+
+### 2. Widget Script
+Paste the provided `<script>` snippet just before the closing `</body>` tag on every page where you want the widget to appear. This script loads and initializes your assistant's chat widget.
+
+---
+
+## Widget Customization Options
+
+### Name
+- **Purpose:** Sets the display name at the top of the chat widget.
+- **Visibility:** Always visible to users.
+
+### Description
+- **Purpose:** Short text shown under the widget name, describing your assistant's purpose.
+- **Visibility:** Always visible to users.
+
+### URL Whitelist
+- **Purpose:** Restricts widget loading to specified URLs (comma-separated list).
+- **Usage:** Enter one or more URLs to control where the widget appears.
+
+### Main Color
+- **Purpose:** Sets the primary accent color for the widget (e.g., header, buttons).
+- **Availability:** **Pro plan and above only.**
+
+### Widget Position
+- **Purpose:** Choose where the widget appears on the page (e.g., Bottom Right).
+- **Options:** Bottom Right, Bottom Left, etc.
+- **Availability:** **Pro plan and above only.**
+
+### Launcher Image
+- **Purpose:** Upload a custom image for the widget launcher button.
+- **Availability:** **Pro plan and above only.**
+
+### Avatar
+- **Purpose:** Upload a custom avatar for your assistant, shown in the chat header and messages.
+- **Availability:** **Pro plan and above only.**
+
+### Launcher Opening/Closing GIFs
+- **Purpose:** Add animated GIFs for the launcher opening and closing actions.
+- **Availability:** **Pro plan and above only.**
+
+### Theme (Light/Dark)
+- **Purpose:** Choose between light and dark widget themes.
+- **Availability:** **Pro plan and above only.**
+
+### Additional Settings: Open Immediately
+- **Purpose:** If enabled, the widget opens automatically when the page loads.
+- **Availability:** All plans.
+
+---
+
+## Feature Availability by Plan
+
+| Feature                        | Starter | Pro & Higher |
+|--------------------------------|:-------:|:------------:|
+| Widget Name & Description      |   ✓     |      ✓       |
+| URL Whitelist                  |   ✓     |      ✓       |
+| Main Color                     |         |      ✓       |
+| Widget Position                |         |      ✓       |
+| Launcher Image                 |         |      ✓       |
+| Avatar                         |         |      ✓       |
+| Launcher GIFs                  |         |      ✓       |
+| Theme (Light/Dark)             |         |      ✓       |
+| Open Immediately               |   ✓     |      ✓       |
+
+---
+
+## Example: Embedding the Widget
+
+```html
+<!-- In <head> -->
+<meta charset="UTF-8">
+
+<!-- Before </body> -->
+<script type="text/javascript" src="https://botstacks.sf3-cdn.digitaloceanspaces.com/webassistant.js"></script>
+<script type="text/javascript">
+  window.onload = function() {
+    initBotStacksAssistant({
+      apiKey: "YOUR_API_KEY",
+      widgetId: "YOUR_WIDGET_ID",
+      botId: "YOUR_BOT_ID"
+    });
+  };
+</script>
+```
+
+---
+
+## FAQ
+
+<details>
+  <summary>Why are some customization options disabled for my account?</summary>
+  <p>Launcher image, avatar, GIFs, main color, widget position, and theme selection are only available on Pro and higher plans. Upgrade your plan to unlock these features.</p>
+</details>
+
+<details>
+  <summary>How do I change the widget's color or theme?</summary>
+  <p>Go to the Activate tab and select your desired color or theme. If you're on the Starter plan, these options will be disabled until you upgrade.</p>
+</details>
+
+<details>
+  <summary>Can I restrict the widget to only appear on certain pages?</summary>
+  <p>Yes. Use the URL whitelist field to specify which URLs the widget should load on. Separate multiple URLs with commas.</p>
+</details>
+
+<details>
+  <summary>What happens if I enable "Open Immediately"?</summary>
+  <p>The chat widget will automatically open when the page loads, rather than waiting for the user to click the launcher.</p>
+</details>
+
+<details>
+  <summary>Can I preview my changes before publishing?</summary>
+  <p>Yes. The right side of the Activate tab shows a live preview of your widget as you customize it. Click "Save settings" to apply changes, and "Publish" to deploy them live.</p>
+</details> 

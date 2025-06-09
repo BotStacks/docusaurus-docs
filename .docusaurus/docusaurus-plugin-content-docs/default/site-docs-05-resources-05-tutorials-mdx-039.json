@@ -1,0 +1,25 @@
+{
+  "id": "resources/tutorials",
+  "title": "Video Tutorials",
+  "description": "Discover our video tutorials, covering everything from beginner guides to advanced features. Whether you're just getting started or looking to level up your skills, our tutorials will help you master BotStacks and build powerful AI assistants.",
+  "source": "@site/docs/05-resources/05-tutorials.mdx",
+  "sourceDirName": "05-resources",
+  "slug": "/resources/tutorials",
+  "permalink": "/resources/tutorials",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "Video Tutorials",
+    "sidebarTitle": "Tutorials",
+    "icon": "graduation-cap",
+    "iconType": "solid"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Contact Support",
+    "permalink": "/resources/contact-support"
+  }
+}

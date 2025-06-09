@@ -1,0 +1,27 @@
+{
+  "id": "common-tasks/integrations/crm-integrations",
+  "title": "CRM Integrations: Front & Crisp",
+  "description": "Integrate BotStacks with CRM tools like Front and Crisp to power business workflows.",
+  "source": "@site/docs/03-common-tasks/09-integrations/04-crm-integrations.mdx",
+  "sourceDirName": "03-common-tasks/09-integrations",
+  "slug": "/common-tasks/integrations/crm-integrations",
+  "permalink": "/common-tasks/integrations/crm-integrations",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "CRM Integrations: Front & Crisp",
+    "description": "Integrate BotStacks with CRM tools like Front and Crisp to power business workflows."
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "WhatsApp Integration",
+    "permalink": "/common-tasks/integrations/whatsapp-integration"
+  },
+  "next": {
+    "title": "Tools & Features",
+    "permalink": "/category/tools--features"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "common-tasks/testing-and-improvement/analyze-and-improve-performance",
+  "title": "Analyze and Improve Performance",
+  "description": "Once you've tested your assistant in DIRTBox, it's time to go deeper the Tests, Transcripts, and Revisions tabs.",
+  "source": "@site/docs/03-common-tasks/03-testing-and-improvement/02-analyze-and-improve-performance.mdx",
+  "sourceDirName": "03-common-tasks/03-testing-and-improvement",
+  "slug": "/common-tasks/testing-and-improvement/analyze-and-improve-performance",
+  "permalink": "/common-tasks/testing-and-improvement/analyze-and-improve-performance",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Test Your Assistant in DIRTbox",
+    "permalink": "/common-tasks/testing-and-improvement/test-in-dirtbox"
+  },
+  "next": {
+    "title": "Simulate Conversations and Debug",
+    "permalink": "/common-tasks/testing-and-improvement/simulate-conversations-and-debug"
+  }
+}
