@@ -10,6 +10,8 @@ This page documents all core node types available in Sequence Studio. Each node 
 ---
 
 ## Start Node
+**Slug:** start-0
+
 **Purpose:** Entry point for every flow. Triggers when a user starts a chat or sends a message.
 
 - **Paths:**
@@ -21,6 +23,8 @@ This page documents all core node types available in Sequence Studio. Each node 
 ---
 
 ## AI Model Node
+**Slug:** llm-index
+
 **Purpose:** Uses an AI model (e.g., GPT-4, Claude, Gemini) to generate a response.
 
 - **Options:**
@@ -38,6 +42,8 @@ This page documents all core node types available in Sequence Studio. Each node 
 ---
 
 ## Text Block Node
+**Slug:** text-index
+
 **Purpose:** Outputs a static text block (plain message or value).
 
 - **Usage:** Use for greetings, instructions, or canned responses.
@@ -48,6 +54,8 @@ This page documents all core node types available in Sequence Studio. Each node 
 ---
 
 ## Send Message Node
+**Slug:** airesponse-index
+
 **Purpose:** Sends a message to the user, using the output of the previous node.
 
 - **Features:**
@@ -58,6 +66,8 @@ This page documents all core node types available in Sequence Studio. Each node 
 ---
 
 ## Wait for Reply Node
+**Slug:** listen-index
+
 **Purpose:** Pauses the flow and waits for user input before continuing.
 
 - **Usage:** Use whenever you need input from the user before proceeding.
@@ -66,6 +76,8 @@ This page documents all core node types available in Sequence Studio. Each node 
 ---
 
 ## Set Value Node
+**Slug:** set-index
+
 **Purpose:** Stores or updates a variable (e.g., user input, state).
 
 - **Options:**
@@ -77,6 +89,8 @@ This page documents all core node types available in Sequence Studio. Each node 
 ---
 
 ## Condition Node
+**Slug:** condition-index
+
 **Purpose:** Branches the flow based on variable values (if/else logic).
 
 - **Features:**
@@ -92,6 +106,8 @@ This page documents all core node types available in Sequence Studio. Each node 
 ---
 
 ## Intent Classify Node
+**Slug:** classify-index
+
 **Purpose:** Uses AI to classify user intent and route the conversation accordingly.
 
 - **Features:**
@@ -108,6 +124,8 @@ This page documents all core node types available in Sequence Studio. Each node 
 ---
 
 ## API Call Node
+**Slug:** api-index
+
 **Purpose:** Connects to external REST APIs (GET, POST, PUT, PATCH, DELETE).
 
 - **Options:**
@@ -124,6 +142,8 @@ This page documents all core node types available in Sequence Studio. Each node 
 ---
 
 ## JavaScript Node
+**Slug:** code-index
+
 **Purpose:** Runs custom JavaScript code for advanced logic or calculations.
 
 - **Features:**
@@ -139,6 +159,8 @@ This page documents all core node types available in Sequence Studio. Each node 
 ---
 
 ## End Node
+**Slug:** end-index
+
 **Purpose:** Marks the end of a flow. Resets conversation state for the user.
 
 - **Usage:** Use to end conversations, clear memory, or reset the assistant.
@@ -147,9 +169,8 @@ This page documents all core node types available in Sequence Studio. Each node 
 ---
 
 ## Advanced/Other Nodes
-- **Collect Info Node:** Sends a form to collect structured data (e.g., phone, email, date). *(See roadmap or ask support if not visible)*
-- **Front/Crisp Nodes:** Integrate with Front or Crisp live chat platforms.
-- **User Data Node:** Access or update user profile data. *(If available in your workspace)*
+- **Collect Info Node:** (slug: userdatacapture-index) Sends a form to collect structured data (e.g., phone, email, date). *(See roadmap or ask support if not visible)*
+- **Front/Crisp Nodes:** (slug: front-index/crips-index) Integrate with Front or Crisp live chat platforms.
 
 ---
 
@@ -159,3 +180,4 @@ This page documents all core node types available in Sequence Studio. Each node 
 - Use Condition and Intent nodes for advanced logic and branching
 - Test each branch and scenario in preview mode
 - Keep flows organized with comments, labels, and logical layout 
+- The slug index is zero-based and increments sequentially for each additional node of the same type
