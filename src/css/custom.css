@@ -69,8 +69,8 @@ html[data-theme='dark'] h6 {
 
 /* 1. Restore side padding for the whole page */
 .main-wrapper {
-  padding-left: var(--side-padding);
-  padding-right: var(--side-padding);
+  padding-left: clamp(0.5rem, 3vw, 3rem);
+  padding-right: clamp(0.5rem, 3vw, 3rem);
 }
 
 /* 2. Add extra space between sidebar and main content */
@@ -81,8 +81,8 @@ html[data-theme='dark'] h6 {
 
 /* 3. Add side padding to the navbar */
 .navbar__inner {
-  padding-left: var(--side-padding);
-  padding-right: var(--side-padding);
+  padding-left: clamp(0.5rem, 3vw, 3rem);
+  padding-right: clamp(0.5rem, 3vw, 3rem);
 }
 
 .navbar::after {
@@ -223,4 +223,60 @@ img {
   /* ↓ classic fallbacks for older browsers ↓ */
   max-width: 100vw !important;
   max-height: 100vh !important;
+}
+
+@media (max-width: 600px) {
+  .main-wrapper {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .main-wrapper .container {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .navbar__inner {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .navbar::after {
+    left: 0 !important;
+    right: 0 !important;
+  }
+  .navbar__items .hide-on-mobile {
+    display: none !important;
+  }
+  .navbar-logo img {
+    max-height: 32px !important;
+    width: auto !important;
+  }
+  .navbar__search {
+    display: none !important;
+  }
+  .card-group {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-wrapper {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .main-wrapper .container {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .navbar__inner {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .navbar::after {
+    left: 0 !important;
+    right: 0 !important;
+  }
+}
+
+.navbar__toggle {
+  margin-right: 1rem;
 }

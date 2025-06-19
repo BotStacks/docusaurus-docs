@@ -56,3 +56,21 @@ html[data-theme='dark'] .card:hover {
 .inlineContent {
   display: inline;
 }
+
+@media (max-width: 600px) {
+  .card {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+    padding: 1rem !important;
+    margin: 0 !important;
+  }
+  .title, .description, .inlineContent {
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+  }
+}
