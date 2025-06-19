@@ -67,6 +67,16 @@ html[data-theme='dark'] .card:hover {
     white-space: normal !important;
     padding: 1rem !important;
     margin: 0 !important;
+    /* Remove hover effect on mobile */
+    transform: none !important;
+    box-shadow: none !important;
+    border-color: var(--ifm-color-emphasis-200) !important;
+    transition: none !important;
+  }
+  .card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    border-color: var(--ifm-color-emphasis-200) !important;
   }
   .title, .description, .inlineContent {
     overflow-wrap: break-word !important;
