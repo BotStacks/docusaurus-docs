@@ -69,8 +69,8 @@ html[data-theme='dark'] h6 {
 
 /* 1. Restore side padding for the whole page */
 .main-wrapper {
-  padding-left: clamp(0.5rem, 3vw, 3rem);
-  padding-right: clamp(0.5rem, 3vw, 3rem);
+  padding-left: clamp(1.5rem, 8vw, 6rem);
+  padding-right: clamp(1.5rem, 8vw, 6rem);
 }
 
 /* 2. Add extra space between sidebar and main content */
@@ -81,15 +81,15 @@ html[data-theme='dark'] h6 {
 
 /* 3. Add side padding to the navbar */
 .navbar__inner {
-  padding-left: clamp(0.5rem, 3vw, 3rem);
-  padding-right: clamp(0.5rem, 3vw, 3rem);
+  padding-left: clamp(1.5rem, 8vw, 6rem);
+  padding-right: clamp(1.5rem, 8vw, 6rem);
 }
 
 .navbar::after {
   content: "";
   position: absolute;
-  left: var(--side-padding);
-  right: var(--side-padding);
+  left: clamp(1.5rem, 8vw, 6rem);
+  right: clamp(1.5rem, 8vw, 6rem);
   bottom: 0;
   height: 1px;
   background: var(--ifm-color-emphasis-200);
@@ -226,17 +226,14 @@ img {
 }
 
 @media (max-width: 600px) {
-  .main-wrapper {
+  .main-wrapper,
+  .navbar__inner {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
   .main-wrapper .container {
     margin-left: 0 !important;
     margin-right: 0 !important;
-  }
-  .navbar__inner {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
   }
   .navbar::after {
     left: 0 !important;
