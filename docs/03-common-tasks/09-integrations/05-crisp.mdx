@@ -1,0 +1,64 @@
+# How to integrate Crisp into Botstacks
+
+- To setup Crisp Integration you will need 3 pieces of information:
+
+<img src="/images/crisp/image.png" alt="Crisp Integration Setup" />
+
+1. **Get Website ID from Crisp**
+    
+    Login to your account at [**https://crisp.chat/en/**](https://crisp.chat/en/) and navigate to Settings -> Workspace Settings -> Setup & Integrations. There you can get the Crisp Website ID and use it on Botstacks.
+    
+    <img src="/images/crisp/image 1.png" alt="Crisp Website ID" />
+    
+
+**2. Creating a plugin on Marketplace**
+Log in to your account at [**https://marketplace.crisp.chat/**](https://marketplace.crisp.chat/), navigate to the "Plugins" section, and click on "New Plugin" to create your plugin, providing a name and description.
+
+<img src="/images/crisp/image 2.png" alt="Crisp Marketplace Plugin Creation" />
+
+3.  **Obtaining Identifier and Key.**
+     Copy and paste the identifier and key into their corresponding fields in BotStacks.
+
+<img src="/images/crisp/image 3.png" alt="Crisp Identifier and Key" />
+
+<img src="/images/crisp/image 4.png" alt="Crisp Integration Fields" />
+
+Hit the save button and copy the Live Chat Webhook URL.
+    
+2. **Add webHook to Crisp Plugin**
+    
+    Go to the created plugin on Crisp Marketplace and navigate to settings tab.
+    
+    <img src="/images/crisp/image 6.png" alt="Crisp Plugin Settings" />
+    
+    Scroll down to the "Event" section, paste the webhook copied in Step 3 (**or the URL obtained at the end of step 4**) into the "Development Webhook" field, and click the "Create Web Hook" button to complete the setup. Toggle all the switches that are necessary and hit the create button. To test messaging the below options should be enough.
+    
+    <img src="/images/crisp/image 7.png" alt="Crisp Webhook Configuration" />
+    
+
+1. **Add Website ID to trusted workspace.**
+    
+    Navigate to [**https://marketplace.crisp.chat/settings/**](https://marketplace.crisp.chat/settings/) and click on Add trusted workspace.
+    
+    <img src="/images/crisp/image 8.png" alt="Crisp Trusted Workspace" />
+    
+    Provide the Website ID from Step 1 in the Website ID field and click on next.
+    
+    <img src="/images/crisp/image 9.png" alt="Crisp Website ID Field" />
+    
+
+Provide the email and password that were used to login to [**https://app.crisp.chat/**](https://app.crisp.chat/). If a third party service like Google was used to create a Crisp account, you can change your password by navigating to [**https://app.crisp.chat/settings/account/information/**](https://app.crisp.chat/settings/account/information/).
+
+Click on Add Trusted Workspace.
+
+<img src="/images/crisp/image 10.png" alt="Crisp Add Trusted Workspace" />
+
+1. Add a node of Type Crisp Integration to your workflow and select "Start live chat" under Settings.
+
+<img src="/images/crisp/image 11.png" alt="Crisp Integration Node" />
+
+8. When the execution reaches the crisp node, you would be able to see a conversation initiated with Crisp ([app.crisp.chat](https://app.crisp.chat/)) with the entire chat history like below.
+
+<img src="/images/crisp/image 12.png" alt="Crisp Conversation History" />
+
+Now you can have a 2-way communication with Crisp.
