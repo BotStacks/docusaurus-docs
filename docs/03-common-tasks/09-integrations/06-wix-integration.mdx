@@ -1,0 +1,69 @@
+---
+title: Wix Integration
+description: How to add the BotStacks assistant widget to your Wix website.
+---
+
+# Integrate BotStacks with Wix
+
+This guide will walk you through adding the BotStacks assistant widget to your Wix website using the custom code feature.
+
+> **Prerequisite:** Adding custom code in Wix requires a [Wix Premium plan](https://www.wix.com/plans). This feature is not available on free sites. 
+
+## 1. Copy your BotStacks widget code
+
+Go to the **Activate** tab in your BotStacks dashboard. You’ll see the code snippets you need to add to your website.
+
+<img alt="Activate tab with widget code" src="/images/integrations/activate.png" />
+
+You’ll need two pieces of code:
+- A `<meta>` tag for the `<head>` section
+- Two `<script>` tags for just before the closing `</body>` tag
+
+### Meta tag (for `<head>`):
+
+```html
+<meta charset="UTF-8">
+```
+
+### Script tags (for end of `<body>`):
+
+> **Note:** Be sure to copy your own `apiKey` and `botId` from the Activate tab in your BotStacks dashboard. Do not use the example values below.
+
+```html
+<script type="text/javascript" src="https://botstacks.sfo3.cdn.digitaloceanspaces.com/webassistant.js"></script>
+<script type="text/javascript">
+  window.onload = function() {
+    initBotStackAssistant({
+      apiKey: "YOUR_API_KEY_HERE",
+      botId: "YOUR_BOT_ID_HERE"
+    });
+  };
+</script>
+```
+
+## 2. Open your Wix site editor
+
+1. Log in to your Wix account and open the site you want to edit.
+2. Go to the **Settings** panel.
+3. In the left sidebar, click **Settings** > **Custom Code**.
+
+<img alt="Wix settings" src="/images/integrations/wix_settings.png" />
+
+## 3. Add the meta and script tags in Wix
+
+1. Click **Add Custom Code**.
+2. When prompted, paste the `<meta charset="UTF-8">` tag and set the location to **Head**. (Optional: Name it "BotStacks Meta Tag")
+3. Click **Add Custom Code** again.
+4. Paste both `<script>` tags (from above) and set the location to **Body - end**. (Optional: Name it "BotStacks Widget")
+5. Click **Apply** or **Save** after each addition.
+
+<img alt="Wix custom code modal highlighting both head and body-end" src="/images/integrations/wix_custom_code.png" />
+
+## 4. Publish your site
+
+1. Click **Publish** in the Wix editor to make your changes live.
+2. Visit your site and confirm the BotStacks widget appears.
+
+---
+
+**Need help?** [Contact support](https://www.botstacks.ai/contact) or visit our [Discord](https://discord.gg/zdEYM3nrHW) for assistance. 

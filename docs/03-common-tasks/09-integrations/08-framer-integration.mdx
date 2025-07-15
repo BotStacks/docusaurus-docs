@@ -1,0 +1,58 @@
+---
+title: Framer Integration
+description: How to add the BotStacks assistant widget to your Framer website.
+---
+
+# Integrate BotStacks with Framer
+
+This guide will walk you through adding the BotStacks assistant widget to your Framer website using the custom code feature.
+
+## 1. Copy your BotStacks widget code
+
+Go to the **Activate** tab in your BotStacks dashboard. You'll see the code snippets you need to add to your website.
+
+<img alt="Activate tab with widget code" src="/images/integrations/activate.png" />
+
+You'll need two pieces of code:
+- A `<meta>` tag for the Head code section
+- Two `<script>` tags for the Body code section
+
+### Meta tag:
+
+```html
+<meta charset="UTF-8">
+```
+
+### Script tags:
+
+> **Note:** Be sure to copy your own `apiKey` and `botId` from the Activate tab in your BotStacks dashboard. Do not use the example values below.
+
+```html
+<script type="text/javascript" src="https://botstacks.sfo3.cdn.digitaloceanspaces.com/webassistant.js"></script>
+<script type="text/javascript">
+  window.onload = function() {
+    initBotStackAssistant({
+      apiKey: "YOUR_API_KEY_HERE",
+      botId: "YOUR_BOT_ID_HERE"
+    });
+  };
+</script>
+```
+
+## 2. Add the code to your Framer project
+
+1. In your Framer project, click the **Settings** icon (gear icon) in the top-right corner.
+2. Scroll down to the **Custom Code** section.
+3. In the **End of `</head>` tag** code box, paste the `<meta charset="UTF-8">` tag.
+4. In the **End of `</body>` tag** code box, paste both `<script>` tags from above.
+
+<img alt="Framer settings with custom code sections highlighted" src="/images/integrations/framer_custom_code.png" />
+
+## 3. Publish your site
+
+1. Click **Publish** to make your changes live.
+2. Visit your site and confirm the BotStacks widget appears.
+
+---
+
+**Need help?** [Contact support](https://www.botstacks.ai/contact) or visit our [Discord](https://discord.gg/zdEYM3nrHW) for assistance. 
