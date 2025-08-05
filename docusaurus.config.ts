@@ -26,6 +26,58 @@ module.exports = {
     // short name works if the package is resolvable from root
     'docusaurus-plugin-image-zoom',
     require.resolve('docusaurus-lunr-search'),
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/02-getting-started/03-quickstart-guide/01-create-botstack',
+            to: '/category/getting-started',
+          },
+          {
+            from: '/getting-started/what-is-botstacks/quickstart-guide/create-botstack',
+            to: '/category/getting-started',
+          },
+          {
+            from: '/resource-center/overview',
+            to: '/category/resources',
+          },
+          {
+            from: '/tools-features/02-common-tasks/02-conversation-design/01-build-flows',
+            to: '/common-tasks/conversation-design/build-flows',
+          },
+          {
+            from: '/tools-features/02-common-tasks/02-conversation-design/03-conditions-logic',
+            to: '/common-tasks/conversation-design/conditions-logic',
+          },
+          {
+            from: '/tools-features/02-common-tasks/04-testing-and-improvement/01-test-in-dirtbox',
+            to: '/common-tasks/testing-and-improvement/test-in-dirtbox',
+          },
+          {
+            from: '/tools-features/common-tasks/conversation-design/build-flows',
+            to: '/common-tasks/conversation-design/build-flows',
+          },
+          {
+            from: '/tools-features/common-tasks/conversation-design/understand-nodes',
+            to: '/common-tasks/conversation-design/understand-nodes',
+          },
+          {
+            from: '/tools-features/02-sequence-studio/05-best-practices',
+            to: '/tools-features/sequence-studio/best-practices',
+          },
+          {
+            from: '/tools-features/sequence-studio/overview/node-reference',
+            to: '/tools-features/sequence-studio/overview',
+          },
+          {
+            from: '/category/tools-features/',
+            to: '/category/tools--features',
+          },
+          // Add more redirects here as needed
+        ],
+      },
+    ],
   ],
 
   themeConfig: /** @type {import('@docusaurus/preset-classic').ThemeConfig} */ ({
