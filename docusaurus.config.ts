@@ -17,15 +17,15 @@ module.exports = {
       {
         docs: { 
           routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.js') },
-        theme: { customCss: require.resolve('./src/css/custom.css') },
+          sidebarPath: './sidebars.ts' },
+        theme: { customCss: './src/css/custom.css' },
       },
     ],
   ],
   plugins: [
     // short name works if the package is resolvable from root
     'docusaurus-plugin-image-zoom',
-    require.resolve('docusaurus-lunr-search'),
+    'docusaurus-lunr-search',
     [
       '@docusaurus/plugin-client-redirects',
       {
@@ -70,6 +70,23 @@ module.exports = {
           {
             from: '/tools-features/sequence-studio/overview/node-reference',
             to: '/tools-features/sequence-studio/node-reference',
+          },
+          // Fix the 404 errors from the image - redirect to correct Docusaurus-generated paths
+          {
+            from: '/tools-features/03-common-tasks/02-conversation-design/01-build-flows',
+            to: '/common-tasks/conversation-design/build-flows',
+          },
+          {
+            from: '/tools-features/03-common-tasks/02-conversation-design/02-understand-nodes',
+            to: '/common-tasks/conversation-design/understand-nodes',
+          },
+          {
+            from: '/tools-features/03-common-tasks/02-conversation-design/03-conditions-logic',
+            to: '/common-tasks/conversation-design/conditions-logic',
+          },
+          {
+            from: '/tools-features/03-common-tasks/03-testing-and-improvement/01-test-in-dirtbox',
+            to: '/common-tasks/testing-and-improvement/test-in-dirtbox',
           },
         ],
 
