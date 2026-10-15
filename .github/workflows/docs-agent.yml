@@ -1,0 +1,165 @@
+name: docs-agent
+
+# Daily public-documentation maintenance.
+#
+# The scheduled run is report-only. It does not open pull requests, merge,
+# or move the checkpoint until a maintainer changes the schedule defaults
+# below. workflow_dispatch can override them for a single run.
+#
+# Emergency stop, in order:
+#   1. Actions → docs-agent → Disable workflow.
+#   2. Or set the repository variable DOCS_AGENT_DISABLED to true.
+#   3. Or set AUTO_PUBLISH back to false. Open pull requests stay open;
+#      nothing is force-merged and main is never force-pushed.
+
+on:
+  schedule:
+    # 07:00 UTC every day.
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Report only. No pull requests, merges, or checkpoint updates."
+        type: boolean
+        default: true
+      auto_publish:
+        description: "Merge AUTO_ELIGIBLE docs PRs when branch rules allow. Leave false until explicitly approved."
+        type: boolean
+        default: false
+  pull_request:
+    paths:
+      - "tools/docs-agent/**"
+      - ".github/workflows/docs-agent.yml"
+      - "docs/**"
+      - "docusaurus.config.ts"
+      - "sidebars.ts"
+      - "package.json"
+      - "yarn.lock"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: docs-agent
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Test the docs agent
+        working-directory: tools/docs-agent
+        run: python -m unittest discover -s tests -v
+
+      - name: Set up Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+          cache: yarn
+
+      - name: Install docs dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build the public docs
+        run: yarn build
+
+  agent:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Stop when the repository variable disables the agent
+        if: vars.DOCS_AGENT_DISABLED == 'true'
+        run: |
+          echo "DOCS_AGENT_DISABLED is true. No pull request, merge, or checkpoint change." >> "$GITHUB_STEP_SUMMARY"
+          echo "stopped=true" >> "$GITHUB_OUTPUT"
+        id: stop
+
+      - name: Checkout
+        if: steps.stop.outputs.stopped != 'true'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Python
+        if: steps.stop.outputs.stopped != 'true'
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Test the docs agent
+        if: steps.stop.outputs.stopped != 'true'
+        working-directory: tools/docs-agent
+        run: python -m unittest discover -s tests -v
+
+      - name: Require secrets
+        if: steps.stop.outputs.stopped != 'true'
+        env:
+          APP_ID: ${{ secrets.DOCS_AGENT_APP_ID }}
+          APP_KEY: ${{ secrets.DOCS_AGENT_APP_PRIVATE_KEY }}
+          LLM_KEY: ${{ secrets.DOCS_AGENT_LLM_API_KEY }}
+        run: |
+          missing=""
+          [ -n "$APP_ID" ] || missing="$missing DOCS_AGENT_APP_ID"
+          [ -n "$APP_KEY" ] || missing="$missing DOCS_AGENT_APP_PRIVATE_KEY"
+          [ -n "$LLM_KEY" ] || missing="$missing DOCS_AGENT_LLM_API_KEY"
+          if [ -n "$missing" ]; then
+            echo "Missing GitHub Actions secrets:$missing" >> "$GITHUB_STEP_SUMMARY"
+            echo "The agent did not read product changes or write to the docs repository." >> "$GITHUB_STEP_SUMMARY"
+            echo "::error::Missing GitHub Actions secrets:$missing"
+            exit 1
+          fi
+
+      - name: Create a GitHub App token
+        if: steps.stop.outputs.stopped != 'true'
+        id: app-token
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          app-id: ${{ secrets.DOCS_AGENT_APP_ID }}
+          private-key: ${{ secrets.DOCS_AGENT_APP_PRIVATE_KEY }}
+          owner: BotStacks
+          repositories: |
+            docusaurus-docs
+            botstacks-sandbox-build
+            botstacks-landing-page
+          permission-metadata: read
+          permission-contents: write
+          permission-pull-requests: write
+          permission-issues: write
+          permission-checks: read
+          permission-actions: read
+
+      - name: Set up Node
+        if: steps.stop.outputs.stopped != 'true'
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+          cache: yarn
+
+      - name: Install docs dependencies
+        if: steps.stop.outputs.stopped != 'true'
+        run: yarn install --frozen-lockfile
+
+      - name: Run the docs agent
+        if: steps.stop.outputs.stopped != 'true'
+        env:
+          PYTHONPATH: tools/docs-agent
+          # Schedule stays report-only until these two literals are changed
+          # in this file and the change is reviewed. Dispatch uses the inputs.
+          DRY_RUN: ${{ github.event_name == 'schedule' && 'true' || inputs.dry_run }}
+          AUTO_PUBLISH: ${{ github.event_name == 'schedule' && 'false' || inputs.auto_publish }}
+          DOCS_AGENT_DISABLED: ${{ vars.DOCS_AGENT_DISABLED }}
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+          LLM_API_KEY: ${{ secrets.DOCS_AGENT_LLM_API_KEY }}
+          LLM_API_BASE: ${{ vars.DOCS_AGENT_LLM_API_BASE || 'https://api.openai.com/v1' }}
+          LLM_MODEL: ${{ vars.DOCS_AGENT_LLM_MODEL || 'gpt-4.1-mini' }}
+          PUBLIC_DOCS_BASE: https://docs.botstacks.ai
+        run: python -m docs_agent
