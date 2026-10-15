@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from docs_agent.checkpoint import RepoState, note_handled, select_pending
 from docs_agent.config import Settings
 from docs_agent.models import AgentPull, ChangedFile, Proposal, PullRequest, Risk
-from docs_agent.run import execute
+from docs_agent.run import NO_UPDATES, execute
 from fakes import FakeGitHub, FakeLLM, FakeWeb
 
 NOW = datetime(2026, 10, 15, 7, 0, tzinfo=timezone.utc)
@@ -133,6 +133,7 @@ class RunTests(unittest.TestCase):
         self.assertEqual(report.proposals[0].risk, Risk.AUTO_ELIGIBLE)
         self.assertEqual(github.merges, [])
         self.assertIn("AUTO_PUBLISH is false", report.merge.reason)
+        self.assertNotIn(NO_UPDATES, report.notes)
 
     def test_no_relevant_prs(self):
         github = FakeGitHub()
@@ -145,6 +146,8 @@ class RunTests(unittest.TestCase):
         self.assertEqual(github.writes, 1)
         state = github.checkpoint.state_for(REPO)
         self.assertIn(f"{REPO}#11", state.processed)
+        self.assertIn(NO_UPDATES, report.notes)
+        self.assertEqual(report.exit_code, 0)
 
     def test_missed_daily_runs_are_included(self):
         github = FakeGitHub()
@@ -368,6 +371,93 @@ class RunTests(unittest.TestCase):
         )
         decision = assess(pull)
         self.assertTrue(decision.relevant)
+
+    def test_no_merged_prs(self):
+        github = FakeGitHub()
+        llm = FakeLLM([correction()])
+        report = self.run_agent(github, llm)
+        self.assertEqual(llm.calls, 0)
+        self.assertEqual(github.opened, [])
+        self.assertEqual(github.merges, [])
+        self.assertEqual(github.writes, 0)
+        self.assertIsNone(github.checkpoint)
+        self.assertEqual(report.considered, [])
+        self.assertIn(NO_UPDATES, report.notes)
+        self.assertEqual(report.exit_code, 0)
+        self.assertNotEqual(report.status, "error")
+
+    def test_all_prs_filtered_out(self):
+        github = FakeGitHub()
+        seed(github, pr(12, "chore(deps): bump lockfile", "2026-10-14T12:00:00Z"), [])
+        seed(github, pr(13, "Enable Sentry Session Replay for frontend", "2026-10-14T13:00:00Z"), [])
+        seed(github, pr(14, "docs: update public guides", "2026-10-14T14:00:00Z", head="docs-agent/update-old"), [])
+        llm = FakeLLM([correction()])
+        report = self.run_agent(github, llm)
+        self.assertEqual(llm.calls, 0)
+        self.assertEqual(github.opened, [])
+        self.assertIn(NO_UPDATES, report.notes)
+        self.assertEqual(report.exit_code, 0)
+        state = github.checkpoint.state_for(REPO)
+        self.assertIn(f"{REPO}#12", state.processed)
+        self.assertIn(f"{REPO}#13", state.processed)
+        self.assertIn(f"{REPO}#14", state.processed)
+        self.assertEqual(state.watermark, "2026-10-14T14:00:00Z")
+
+    def test_no_matching_documentation_pages(self):
+        github = FakeGitHub()
+        pull = pr(80, "Add Slack integration reconnect button", "2026-10-14T12:00:00Z")
+        seed(
+            github,
+            pull,
+            production_runs(),
+            files=(ChangedFile("frontend/src/integrations/slack.ts", "modified", "reconnect()"),),
+        )
+        llm = FakeLLM([correction(source_prs=[f"{REPO}#80"])])
+        report = self.run_agent(github, llm)
+        self.assertEqual(llm.calls, 0)
+        self.assertEqual(github.opened, [])
+        self.assertEqual(github.merges, [])
+        self.assertIn(NO_UPDATES, report.notes)
+        self.assertTrue(any("matched no public page" in note for note in report.notes))
+        self.assertEqual(report.exit_code, 0)
+        state = github.checkpoint.state_for(REPO)
+        self.assertIn(f"{REPO}#80", state.held)
+        self.assertNotIn(f"{REPO}#80", state.processed)
+
+    def test_empty_change_key_collection(self):
+        github = FakeGitHub()
+        seed(github, brainvault(), production_runs())
+        proposal = correction(source_prs=[], source_files=[])
+        report = self.run_agent(github, FakeLLM([proposal]), auto_publish=True)
+        self.assertEqual(github.opened, [])
+        self.assertEqual(github.commits, [])
+        self.assertEqual(github.merges, [])
+        self.assertIn(NO_UPDATES, report.notes)
+        self.assertEqual(report.exit_code, 0)
+        self.assertNotEqual(report.status, "error")
+        state = github.checkpoint.state_for(REPO)
+        self.assertEqual(state.processed[f"{REPO}#700"], "no documentation change")
+        self.assertEqual(state.watermark, "2026-10-14T22:30:00Z")
+
+    def test_empty_change_keys_do_not_open_a_pr_on_dry_run(self):
+        github = FakeGitHub()
+        seed(github, brainvault(), production_runs())
+        report = self.run_agent(github, FakeLLM([correction(source_prs=[])]), dry_run=True)
+        self.assertEqual(github.writes, 0)
+        self.assertEqual(github.opened, [])
+        self.assertIn(NO_UPDATES, report.notes)
+        self.assertNotIn("would open", report.pull_action)
+
+    def test_valid_change_still_opens_a_pr(self):
+        github = FakeGitHub()
+        seed(github, brainvault(), production_runs())
+        report = self.run_agent(github, FakeLLM([correction()]))
+        self.assertEqual(len(github.opened), 1)
+        self.assertIn(PAGE, github.commits[0]["files"])
+        self.assertIn("Source-Keys: BotStacks/botstacks-sandbox-build#700", github.opened[0].body)
+        self.assertNotIn(NO_UPDATES, report.notes)
+        self.assertIn("AUTO_PUBLISH is false", report.merge.reason)
+        self.assertEqual(github.merges, [])
 
 
 if __name__ == "__main__":
