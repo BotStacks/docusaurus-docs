@@ -47,7 +47,7 @@ _KEYWORDS = (
     "chatbot",
     "installation",
     "install the",
-    "framer",
+    "godaddy", "airo",
     "bubble",
     "webflow",
     "wix",
@@ -76,7 +76,7 @@ _PATH_HINTS = (
     "install-method",
     "embed",
     "integration",
-    "framer",
+    "godaddy", "airo",
     "bubble",
     "webflow",
     "activation",
@@ -111,3 +111,4 @@ def assess(pr: PullRequest) -> Relevance:
     if any(hint in haystack for hint in _PATH_HINTS):
         return Relevance(True, "customer-facing path")
     return Relevance(False, "no documented product behavior")
+

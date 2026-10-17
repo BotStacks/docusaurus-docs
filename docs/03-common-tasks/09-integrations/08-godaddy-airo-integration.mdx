@@ -1,0 +1,29 @@
+---
+title: GoDaddy Airo Integration — Planned
+description: Compatibility status and evaluation requirements for BotStacks on GoDaddy Airo.
+---
+
+# GoDaddy Airo — planned integration
+
+BotStacks is evaluating GoDaddy Airo as a deployment target. **Compatibility has not yet been verified on a published GoDaddy site.** There is no confirmed BotStacks marketplace listing or one-click installer for this platform.
+
+## Identify your builder first
+
+GoDaddy Airo AI Builder, Websites + Marketing and Airo for WordPress are different products. Start with [GoDaddy's builder identification guide](https://www.godaddy.com/help/which-godaddy-website-builder-do-i-have-42917). This page does not announce WordPress support.
+
+- **Airo AI Builder:** GoDaddy documents a Code editor. The BotStacks snippet must be evaluated in the site's shared layout before a site-wide assistant can be promised. See the [editor guide](https://www.godaddy.com/help/navigate-the-airo-ai-builder-editor-43002).
+- **Websites + Marketing:** GoDaddy documents custom HTML/CSS/JavaScript sections. An HTML section is not proof of site-wide script injection. A section may constrain widget size or position; do not assume a floating launcher can escape its container. See [custom code guidance](https://www.godaddy.com/help/add-html-or-custom-code-to-my-site-27252).
+
+## Pilot evaluation
+
+Use an isolated test site. Obtain the current generated BotStacks snippet for a published test assistant, with its public Bot ID and matching API environment. Keep model-provider credentials out of the page.
+
+Follow the documented code path for the exact builder, preview and publish to a test domain. Check script loading, a correct test response, navigation/remounts, mobile keyboard/focus, container clipping, origin/CSP restrictions and existing GoDaddy chat conflicts. Confirm whether installation covers every intended page or only one section.
+
+Remove the snippet/section, publish again and confirm it no longer loads. Preserve other custom code. Record the builder, plan, region, public domain and results before describing this as supported.
+
+## Availability
+
+Until the pilot passes, use one of BotStacks' established Wix, Webflow, Bubble or Squarespace setup paths. Marketplace discovery and a dedicated adapter repository will be considered only if GoDaddy provides a suitable approved distribution mechanism.
+
+Track compatibility through BotStacks Help. No production support or installation success is implied by these evaluation instructions.
