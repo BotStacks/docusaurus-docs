@@ -25,8 +25,8 @@ _TOPIC_PAGES: tuple[tuple[tuple[str, ...], tuple[str, ...]], ...] = (
         ("embed-chatbot", "deployment", "activation-kit"),
     ),
     (
-        ("framer", "bubble", "webflow", "wix", "squarespace", "slack", "discord", "whatsapp", "crisp", "integration"),
-        ("integrations", "framer", "bubble", "webflow", "wix", "squarespace", "slack", "discord", "whatsapp", "crisp"),
+        ("godaddy", "airo", "bubble", "webflow", "wix", "squarespace", "slack", "discord", "whatsapp", "crisp", "integration"),
+        ("integrations", "godaddy", "airo", "bubble", "webflow", "wix", "squarespace", "slack", "discord", "whatsapp", "crisp"),
     ),
     (
         ("sequence studio", "node", "conversation flow"),
@@ -129,3 +129,4 @@ def excerpt(page: DocPage, limit: int) -> str:
     if len(page.text) <= limit:
         return page.text
     return page.text[:limit] + "\n\n[truncated]\n"
+
