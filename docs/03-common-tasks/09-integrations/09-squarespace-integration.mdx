@@ -1,62 +1,42 @@
 ---
 title: Squarespace Integration
-description: How to add the BotStacks assistant widget to your Squarespace website.
+description: Install, verify and remove the current BotStacks assistant on Squarespace.
 ---
 
-# Integrate BotStacks with Squarespace
+# Add BotStacks to Squarespace
 
-This guide will walk you through adding the BotStacks assistant widget to your Squarespace website using the custom code feature.
+## Before you start
 
-## 1. Copy your BotStacks widget code
+Have a BotStacks assistant ready to deploy and permission to edit your website. In BotStacks, open **Add to website** and use the generated instructions for your current account/environment. Keep the assistant and site selection consistent throughout setup.
 
-Go to the **Activate** tab in your BotStacks dashboard. You'll see the code snippets you need to add to your website.
+The current widget uses a public **Bot ID**. Copy the generated snippet rather than entering an OpenAI or other model-provider API key. Keep the script URL and API origin from the same BotStacks environment. Do not add a separate charset meta tag.
 
-<img alt="Activate tab with widget code" src="/images/integrations/activate.png" />
+## Check plan eligibility
 
-You'll need two pieces of code:
-- A `<meta>` tag for the Header code section
-- Two `<script>` tags for the Footer code section
+Squarespace Code Injection is available on **Core, Plus, Advanced and some legacy plans**. Check the current [Code Injection guidance](https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection) for your account. Checkout pages do not support this code.
 
-### Meta tag:
+This setup uses Code Injection. It is not evidence of an approved native Squarespace Extensions listing.
 
-```html
-<meta charset="UTF-8">
-```
+## Add your assistant
 
-### Script tags:
+1. Copy the generated snippet in BotStacks **Add to website → Squarespace**.
+2. Open your site's **Code Injection** panel in Squarespace. Use the official guide above if navigation differs in your account.
+3. Paste the snippet **once** into **Footer**, preserving other existing code.
+4. Choose **Save** and open the public site outside the editor.
+5. Send a test message to confirm the correct assistant responds.
 
-> **Note:** Be sure to copy your own `apiKey` and `botId` from the Activate tab in your BotStacks dashboard. Do not use the example values below.
+The footer field inserts code before the closing body tag across the site. Do not use a redirect to your own site as confirmation that installation occurred.
 
-```html
-<script type="text/javascript" src="https://botstacks.sfo3.cdn.digitaloceanspaces.com/webassistant.js"></script>
-<script type="text/javascript">
-  window.onload = function() {
-    initBotStackAssistant({
-      apiKey: "YOUR_API_KEY_HERE",
-      botId: "YOUR_BOT_ID_HERE"
-    });
-  };
-</script>
-```
+## Update or remove
 
-## 2. Add the code to your Squarespace site
+Keep your Bot ID and snippet environment consistent. For removal, delete only the BotStacks snippet from Footer, save and reload the public site. Leave unrelated code intact. If using both page-level and site-wide code, remove duplicate BotStacks copies as well.
 
-1. In your Squarespace site, click **Custom Code** in the left sidebar.
-2. Click **Code Injection** from the dropdown menu.
+## Check your published site
 
-<img alt="Squarespace Custom Code navigation highlighted" src="/images/integrations/squarespace.png" />
+Open the public domain outside the editor, including a private browser window. Check the launcher, send a test message, navigate to another page, and check the mobile layout. An editor install, callback or “detected” signal alone does not prove the assistant can answer visitors.
 
-3. In the **Header** code box, paste the `<meta charset="UTF-8">` tag.
-4. In the **Footer** code box, paste both `<script>` tags from above.
-5. Click **Save**.
+If it does not appear, confirm the assistant is published, the site is saved/published, the Bot ID and environment are correct, and the script is not blocked or installed twice. Keep other site scripts intact while troubleshooting. Contact BotStacks through the Help area in your account with the platform, public site URL and error; do not send credentials or handoff tokens.
 
-<img alt="Squarespace Code Injection panel with Header and Footer sections" src="/images/integrations/squarespace_code_injection.png" />
+## Existing legacy installations
 
-## 3. Publish your site
-
-1. Your changes are automatically saved and published.
-2. Visit your site and confirm the BotStacks widget appears.
-
----
-
-**Need help?** [Contact support](https://www.botstacks.ai/contact) or visit our [Discord](https://discord.gg/zdEYM3nrHW) for assistance. 
+If your working installation uses `webassistant.js` or `initBotStackAssistant`, it follows an older integration. Test the current generated snippet on a staging/test site before switching. Remove the older embed when the replacement is verified so visitors do not see duplicate assistants.

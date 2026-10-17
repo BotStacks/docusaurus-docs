@@ -1,65 +1,44 @@
 ---
 title: Webflow Integration
-description: How to add the BotStacks assistant widget to your Webflow website.
+description: Install, verify and remove the current BotStacks assistant on Webflow.
 ---
 
-# Integrate BotStacks with Webflow
+# Add BotStacks to Webflow
 
-This guide will walk you through adding the BotStacks assistant widget to your Webflow website using the custom code feature.
+## Before you start
 
-> **Prerequisite:** Adding custom code in Webflow requires a [Webflow Workspace plan](https://webflow.com/pricing) or higher. This feature is not available on free sites.
+Have a BotStacks assistant ready to deploy and permission to edit your website. In BotStacks, open **Add to website** and use the generated instructions for your current account/environment. Keep the assistant and site selection consistent throughout setup.
 
-## 1. Copy your BotStacks widget code
+The current widget uses a public **Bot ID**. Copy the generated snippet rather than entering an OpenAI or other model-provider API key. Keep the script URL and API origin from the same BotStacks environment. Do not add a separate charset meta tag.
 
-Go to the **Activate** tab in your BotStacks dashboard. You'll see the code snippets you need to add to your website.
+## Connect from the Webflow Designer
 
-<img alt="Activate tab with widget code" src="/images/integrations/activate.png" />
+Use this route when the BotStacks app is available to your Webflow account:
 
-You'll need two pieces of code:
-- A `<meta>` tag for the Head code section
-- Two `<script>` tags for the Footer code section
+1. Select Webflow in BotStacks **Add to website**, then open the intended site in the Webflow Designer.
+2. Open **Apps** and launch BotStacks using its verified app entry.
+3. Connect your BotStacks account and approve the requested Webflow permissions for the correct site/workspace.
+4. Select your assistant and install it. Confirm the intended domains before approving publication; publishing can also expose other pending site changes.
+5. Open the published custom domain and test the assistant.
 
-### Meta tag:
+If the app is unavailable, use a supported pilot invitation or the generated manual snippet option if your BotStacks account offers it. Check your Webflow plan and custom-code permissions first. Do not assume that a generic Marketplace URL is the BotStacks listing.
 
-```html
-<meta charset="UTF-8">
-```
+## Manual snippet, when offered
 
-### Script tags:
+Copy the generated snippet into your site's footer custom-code area, save and publish to the chosen domain. Follow Webflow's current site settings guidance. Install only one copy; do not combine a manual snippet and app-managed injection.
 
-> **Note:** Be sure to copy your own `apiKey` and `botId` from the Activate tab in your BotStacks dashboard. Do not use the example values below.
+## Update or remove
 
-```html
-<script type="text/javascript" src="https://botstacks.sfo3.cdn.digitaloceanspaces.com/webassistant.js"></script>
-<script type="text/javascript">
-  window.onload = function() {
-    initBotStackAssistant({
-      apiKey: "YOUR_API_KEY_HERE",
-      botId: "YOUR_BOT_ID_HERE"
-    });
-  };
-</script>
-```
+Use the app's removal flow when available, or remove only the BotStacks snippet/script entry from site custom code. Publish to the same domains and verify it no longer loads. Preserve other scripts. If an app-managed removal control is unavailable, contact BotStacks before deleting unrelated entries.
 
-## 2. Open your Webflow project
+Distribution guidance: [Webflow app marketplace](https://developers.webflow.com/apps/docs/marketplace/overview).
 
-1. Log in to your Webflow account and open the project you want to edit.
-2. In the Designer, click **Settings** in the left sidebar.
+## Check your published site
 
-<img alt="Webflow Designer with Settings panel" src="/images/integrations/webflow_settings_button.png" />
+Open the public domain outside the editor, including a private browser window. Check the launcher, send a test message, navigate to another page, and check the mobile layout. An editor install, callback or “detected” signal alone does not prove the assistant can answer visitors.
 
-## 3. Add the meta and script tags in Webflow
+If it does not appear, confirm the assistant is published, the site is saved/published, the Bot ID and environment are correct, and the script is not blocked or installed twice. Keep other site scripts intact while troubleshooting. Contact BotStacks through the Help area in your account with the platform, public site URL and error; do not send credentials or handoff tokens.
 
-1. In the Settings panel, click **Custom Code**.
-2. In the **Head Code** section, paste the `<meta charset="UTF-8">` tag.
-3. In the **Footer Code** section, paste both `<script>` tags from above.
-4. Click **Save Changes**.
+## Existing legacy installations
 
-## 4. Publish your site
-
-1. Click **Publish** in the top-right corner of the Designer to make your changes live.
-2. Visit your site and confirm the BotStacks widget appears.
-
----
-
-**Need help?** [Contact support](https://www.botstacks.ai/contact) or visit our [Discord](https://discord.gg/zdEYM3nrHW) for assistance. 
+If your working installation uses `webassistant.js` or `initBotStackAssistant`, it follows an older integration. Test the current generated snippet on a staging/test site before switching. Remove the older embed when the replacement is verified so visitors do not see duplicate assistants.

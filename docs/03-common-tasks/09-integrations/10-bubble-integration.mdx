@@ -1,37 +1,40 @@
 ---
 title: Bubble Integration
-description: How to add the BotStacks assistant widget to your Bubble website.
+description: Install, verify and remove the current BotStacks assistant on Bubble.
 ---
 
-# Integrate BotStacks with Bubble
+# Add BotStacks to Bubble
 
-This guide will walk you through adding the BotStacks assistant widget to your Bubble website using the BotStacks plugin and workflows.
+## Before you start
 
-## 1. Install the BotStacks plugin
+Have a BotStacks assistant ready to deploy and permission to edit your website. In BotStacks, open **Add to website** and use the generated instructions for your current account/environment. Keep the assistant and site selection consistent throughout setup.
 
-1. In your Bubble editor, go to the **Plugins** tab in the left sidebar.
-2. Search for **BotStacks Assistant** and click **Install**.
+The current widget uses a public **Bot ID**. Copy the generated snippet rather than entering an OpenAI or other model-provider API key. Keep the script URL and API origin from the same BotStacks environment. Do not add a separate charset meta tag.
 
-<img alt="Bubble plugin installation" src="/images/integrations/bubble_plugin.png" />
+## Install the current element plugin
 
-## 2. Set up the workflow to initialize the assistant
+1. In BotStacks **Add to website**, select **Bubble** and copy the public **Bot ID**.
+2. In the Bubble editor, open **Plugins → Add plugins** and locate the verified **BotStacks Stacky** plugin. Check the publisher and version against the link supplied by BotStacks.
+3. Add its element to a reusable header used by every page where you want the assistant.
+4. Set **Bot ID** and the desired kit. Use the BotStacks-provided API origin if a test environment is required; leave production defaults otherwise.
+5. Preview, then deploy to **Live** and test the public site.
 
-1. Go to your Bubble app's **Workflow** tab.
-2. Click **+ New** to create a new workflow.
-3. Select **Page is Loaded** as the event trigger.
-4. Click the **+** button to add an action.
-5. Search for and select **Initialize BotStacks Assistant**.
-6. In the action settings, input your API key and Bot ID.
+The current source uses an element, rather than the older “Initialize BotStacks Assistant” workflow. It does not require a model-provider API key. Published listing/version claims are being reconciled; if the plugin cannot be found, request the verified installation link through BotStacks Help.
 
-<img alt="Bubble workflow setup" src="/images/integrations/bubble_workflow.png" />
+## Update or remove
 
-> **Note:** Be sure to copy your own `apiKey` and `botID` from the Integrate tab in your BotStacks dashboard.
+Test any plugin version or Bot ID/kit change in development before deploying Live. Remove the BotStacks element from all reusable headers/pages to uninstall, then deploy Live. Remove old manually pasted snippets and legacy initialization workflows for this widget only. Check multiple pages for duplicates.
 
-## 3. Preview and publish your site
+A “Detected” site signal indicates client activity; confirm a successful conversation before treating the deployment as ready.
 
-1. Click **Preview** to test your site and confirm the BotStacks widget appears.
-2. When ready, publish your site to make the widget live for your visitors.
+Official distribution guidance: [Bubble plugin publishing and versioning](https://manual.bubble.io/account-and-marketplace/building-plugins/publishing-and-versioning).
 
----
+## Check your published site
 
-**Need help?** [Contact support](https://www.botstacks.ai/contact) or visit our [Discord](https://discord.gg/zdEYM3nrHW) for assistance. 
+Open the public domain outside the editor, including a private browser window. Check the launcher, send a test message, navigate to another page, and check the mobile layout. An editor install, callback or “detected” signal alone does not prove the assistant can answer visitors.
+
+If it does not appear, confirm the assistant is published, the site is saved/published, the Bot ID and environment are correct, and the script is not blocked or installed twice. Keep other site scripts intact while troubleshooting. Contact BotStacks through the Help area in your account with the platform, public site URL and error; do not send credentials or handoff tokens.
+
+## Existing legacy installations
+
+If your working installation uses `webassistant.js` or `initBotStackAssistant`, it follows an older integration. Test the current generated snippet on a staging/test site before switching. Remove the older embed when the replacement is verified so visitors do not see duplicate assistants.
